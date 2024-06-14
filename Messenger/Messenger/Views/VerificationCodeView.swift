@@ -15,10 +15,13 @@ struct VerificationCodeView: View {
         VStack {
             Text("Введите код")
                 .font(.Typography.Heading.h2)
+                .multilineTextAlignment(.center)
                 .padding()
             
             Text("Отправили код на номер \(viewModel.phoneNumber)")
                 .font(.Typography.Body.body2)
+                .lineSpacing(24)
+                .multilineTextAlignment(.center)
                 .padding()
             
             TextField("Код подтверждения", text: $viewModel.code)
@@ -37,6 +40,7 @@ struct VerificationCodeView: View {
                         .font(.Typography.Body.body1)
                 }
                 .font(.Typography.Heading.h1)
+                .multilineTextAlignment(.center)
             
             Button(action: {
                 viewModel.resetCode()
@@ -44,6 +48,8 @@ struct VerificationCodeView: View {
             }) {
                 Text("Запросить код повторно")
                     .font(.Typography.Subheading.sub2)
+                    .lineSpacing(28)
+                    .multilineTextAlignment(.center)
                     .padding()
             }
             .disabled(viewModel.isButtonDisabled)
@@ -54,6 +60,8 @@ struct VerificationCodeView: View {
                 if viewModel.isButtonDisabled {
                     Text("Повторный запрос через \(viewModel.remainingSeconds) сек")
                         .font(.Typography.Metadata.metadata1)
+                        .lineSpacing(16)
+                        .multilineTextAlignment(.center)
                         .foregroundStyle(.gray)
                         .padding(.top, 10)
                 }

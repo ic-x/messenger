@@ -15,10 +15,13 @@ struct VerificationPhoneView: View {
         VStack {
             Text("Введите номер телефона")
                 .font(.Typography.Heading.h2)
+                .multilineTextAlignment(.center)
                 .padding()
             
             Text("Мы вышлем код подтверждения на указанный номер")
                 .font(.Typography.Body.body2)
+                .lineSpacing(24)
+                .multilineTextAlignment(.center)
                 .padding()
             
             HStack {
@@ -39,12 +42,14 @@ struct VerificationPhoneView: View {
                     )
                 }
                 .font(.Typography.Body.body1)
+                .lineSpacing(24)
                 TextField("000 000-00-00", text: $viewModel.phoneNumber)
                     .keyboardType(.phonePad)
                     .onChange(of: viewModel.phoneNumber) { oldValue, newValue in
                         viewModel.phoneNumber = viewModel.formatPhoneNumber(String(newValue.filter { "0123456789".contains($0) }))
                     }
                     .font(.Typography.Body.body1)
+                    .lineSpacing(24)
             }
             .padding()
             
@@ -54,6 +59,8 @@ struct VerificationPhoneView: View {
             }) {
                 Text("Продолжить")
                     .font(.Typography.Subheading.sub2)
+                    .lineSpacing(28)
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(viewModel.isPhoneNumberValid ? .blue : .gray)
             }
             .disabled(!viewModel.isPhoneNumberValid)

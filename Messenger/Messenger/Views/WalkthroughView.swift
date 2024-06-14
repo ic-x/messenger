@@ -15,38 +15,43 @@ struct WalkthroughView: View {
         VStack {
             Text("Общайтесь с друзьями и близкими легко")
                 .font(.Typography.Heading.h2)
+                .multilineTextAlignment(.center)
                 .padding()
             
-            Text("Нажимая кнопку «Начать общаться», я соглашаюсь с ")
-                .font(.Typography.Metadata.metadata2)
-            HStack(spacing: 0) {
-                Button(action: {
-                    viewModel.showPrivacyPolicy()
-                }) {
-                    Text("политикой конфиденциальности")
-                        .font(.Typography.Metadata.metadata2)
-                }
-                .sheet(isPresented: $viewModel.showingPrivacyPolicy) {
-                    PrivacyPolicyView()
-                }
-                Text(" и ")
-                    .font(.Typography.Metadata.metadata2)
-                Button(action: {
-                    viewModel.showTermsOfUse()
-                }) {
-                    Text("условиями использования")
-                        .font(.Typography.Metadata.metadata2)
-                }
-                .sheet(isPresented: $viewModel.showingTermsOfUse) {
-                    TermsOfUseView()
+            VStack {
+                Text("Нажимая кнопку «Начать общаться», я соглашаюсь с ")
+                HStack(spacing: 0) {
+                    Button(action: {
+                        viewModel.showPrivacyPolicy()
+                    }) {
+                        Text("политикой конфиденциальности")
+                    }
+                    .sheet(isPresented: $viewModel.showingPrivacyPolicy) {
+                        PrivacyPolicyView()
+                    }
+                    Text(" и ")
+                    Button(action: {
+                        viewModel.showTermsOfUse()
+                    }) {
+                        Text("условиями использования")
+                    }
+                    .sheet(isPresented: $viewModel.showingTermsOfUse) {
+                        TermsOfUseView()
+                    }
                 }
             }
+            .font(.Typography.Metadata.metadata2)
+            .lineSpacing(16)
+            .frame(width: 327, height: 32)
+            .multilineTextAlignment(.center)
             
             Button(action: {
                 viewModel.navigateToVerificationPhoneView(navigationPath: $navigationPath)
             }) {
                 Text("Начать общаться")
                     .font(.Typography.Subheading.sub2)
+                    .lineSpacing(28)
+                    .multilineTextAlignment(.center)
             }
             .padding()
         }

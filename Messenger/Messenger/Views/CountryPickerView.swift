@@ -18,6 +18,7 @@ struct CountryPickerView: View {
             VStack {
                 HStack {
                     TextField("Поиск страны", text: $searchText)
+                        .font(.Typography.Body.body1)
                         .padding(10)
                         .background(Color(.systemGray6))
                         .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -34,17 +35,22 @@ struct CountryPickerView: View {
                             Text(country.name)
                             Spacer()
                             Text(country.code)
-                                .font(.Typography.Body.body1)
                         }
+                        .font(.Typography.Body.body1)
+                        .lineSpacing(24)
                     }
                 }
             }
-            .navigationTitle("Выберите страну")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Выберите страну")
+                        .font(.Typography.Heading.h2)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Отмена") {
                         isPresented = false
                     }
+                    .font(.Typography.Subheading.sub2)
                 }
             }
         }

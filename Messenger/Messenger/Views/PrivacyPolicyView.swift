@@ -19,7 +19,7 @@ struct PrivacyPolicyView: View {
                         .font(.Typography.Heading.h2)
                     
                     ForEach(viewModel.sections, id: \.title) { section in
-                        Group {
+                        VStack(alignment: .leading, spacing: 5) {
                             Text(section.title)
                                 .font(.Typography.Subheading.sub1)
                             Text(section.content)
@@ -30,6 +30,8 @@ struct PrivacyPolicyView: View {
                 .padding()
             }
             
+            Spacer()
+            
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
@@ -37,7 +39,6 @@ struct PrivacyPolicyView: View {
                     .font(.Typography.Subheading.sub2)
                     .padding()
             }
-            .padding()
         }
         .navigationTitle("Политика конфиденциальности")
     }
