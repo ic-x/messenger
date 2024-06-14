@@ -16,14 +16,14 @@ struct TermsOfUseView: View {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 20) {
                     Text("Условия использования")
-                        .font(.title)
-                        .bold()
+                        .font(.Typography.Heading.h2)
                     
                     ForEach(viewModel.sections, id: \.title) { section in
                         Group {
                             Text(section.title)
-                                .font(.headline)
+                                .font(.Typography.Subheading.sub1)
                             Text(section.content)
+                                .font(.Typography.Body.body2)
                         }
                     }
                 }
@@ -34,6 +34,8 @@ struct TermsOfUseView: View {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Закрыть")
+                    .font(.Typography.Subheading.sub2)
+                    .padding()
             }
             .padding()
         }

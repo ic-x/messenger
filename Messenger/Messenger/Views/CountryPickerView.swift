@@ -34,6 +34,7 @@ struct CountryPickerView: View {
                             Text(country.name)
                             Spacer()
                             Text(country.code)
+                                .font(.Typography.Body.body1)
                         }
                     }
                 }

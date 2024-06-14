@@ -14,29 +14,28 @@ struct WalkthroughView: View {
     var body: some View {
         VStack {
             Text("Общайтесь с друзьями и близкими легко")
-                .font(.title)
-                .bold()
+                .font(.Typography.Heading.h2)
                 .padding()
             
             Text("Нажимая кнопку «Начать общаться», я соглашаюсь с ")
-                .font(.caption)
+                .font(.Typography.Metadata.metadata2)
             HStack(spacing: 0) {
                 Button(action: {
                     viewModel.showPrivacyPolicy()
                 }) {
                     Text("политикой конфиденциальности")
-                        .font(.caption)
+                        .font(.Typography.Metadata.metadata2)
                 }
                 .sheet(isPresented: $viewModel.showingPrivacyPolicy) {
                     PrivacyPolicyView()
                 }
                 Text(" и ")
-                    .font(.caption)
+                    .font(.Typography.Metadata.metadata2)
                 Button(action: {
                     viewModel.showTermsOfUse()
                 }) {
                     Text("условиями использования")
-                        .font(.caption)
+                        .font(.Typography.Metadata.metadata2)
                 }
                 .sheet(isPresented: $viewModel.showingTermsOfUse) {
                     TermsOfUseView()
@@ -47,7 +46,7 @@ struct WalkthroughView: View {
                 viewModel.navigateToVerificationPhoneView(navigationPath: $navigationPath)
             }) {
                 Text("Начать общаться")
-                    .font(.title)
+                    .font(.Typography.Subheading.sub2)
             }
             .padding()
         }

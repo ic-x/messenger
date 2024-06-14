@@ -14,11 +14,11 @@ struct VerificationCodeView: View {
     var body: some View {
         VStack {
             Text("Введите код")
-                .font(.title)
-                .bold()
+                .font(.Typography.Heading.h2)
                 .padding()
             
             Text("Отправили код на номер \(viewModel.phoneNumber)")
+                .font(.Typography.Body.body2)
                 .padding()
             
             TextField("Код подтверждения", text: $viewModel.code)
@@ -31,16 +31,19 @@ struct VerificationCodeView: View {
                     Button("OK") {
                         viewModel.showingAlert = false
                     }
+                    .font(.Typography.Body.body2)
                 } message: {
                     Text("Неправильный код подтверждения")
+                        .font(.Typography.Body.body1)
                 }
+                .font(.Typography.Heading.h1)
             
             Button(action: {
                 viewModel.resetCode()
                 viewModel.startCooldown()
             }) {
                 Text("Запросить код повторно")
-                    .bold()
+                    .font(.Typography.Subheading.sub2)
                     .padding()
             }
             .disabled(viewModel.isButtonDisabled)
@@ -50,6 +53,7 @@ struct VerificationCodeView: View {
                 
                 if viewModel.isButtonDisabled {
                     Text("Повторный запрос через \(viewModel.remainingSeconds) сек")
+                        .font(.Typography.Metadata.metadata1)
                         .foregroundStyle(.gray)
                         .padding(.top, 10)
                 }
