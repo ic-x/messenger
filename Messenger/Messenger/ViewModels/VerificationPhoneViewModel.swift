@@ -14,9 +14,20 @@ class VerificationPhoneViewModel: ObservableObject {
     @Published var searchText = ""
     
     static let countries: [Country] = [
+        Country(name: "США", code: "+1", flag: "🇺🇸"),
+        Country(name: "Китай", code: "+86", flag: "🇨🇳"),
+        Country(name: "Турция", code: "+90", flag: "🇹🇷"),
+        Country(name: "Великобритания", code: "+44", flag: "🇬🇧"),
+        Country(name: "Южная Корея", code: "+82", flag: "🇰🇷"),
+        Country(name: "ОАЭ", code: "+971", flag: "🇦🇪"),
         Country(name: "Россия", code: "+7", flag: "🇷🇺"),
-        Country(name: "United States", code: "+1", flag: "🇺🇸"),
-        Country(name: "United Kingdom", code: "+44", flag: "🇬🇧"),
+        Country(name: "Казахстан", code: "+7", flag: "🇰🇿"),
+        Country(name: "Азербайджан", code: "+994", flag: "🇦🇿"),
+        Country(name: "Узбекистан", code: "+998", flag: "🇺🇿"),
+        Country(name: "Беларусь", code: "+375", flag: "🇧🇾"),
+        Country(name: "Армения", code: "+374", flag: "🇦🇲"),
+        Country(name: "Грузия", code: "+995", flag: "🇬🇪"),
+        Country(name: "Кыргызстан", code: "+996", flag: "🇰🇬"),
     ]
     
     var filteredCountries: [Country] {
@@ -60,6 +71,6 @@ class VerificationPhoneViewModel: ObservableObject {
     }
     
     init() {
-        self.selectedCountry = Self.countries[0]
+        self.selectedCountry = Self.countries[6]
     }
 }
