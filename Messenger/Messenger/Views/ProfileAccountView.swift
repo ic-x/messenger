@@ -61,7 +61,7 @@ struct ProfileAccountView: View {
             }
             .disabled(viewModel.isSaveButtonDisabled)
             .padding(.horizontal, 40)
-            .padding(.top, 20)
+            .padding(.top, 40)
         }
         .padding()
         .toolbar {

@@ -19,12 +19,14 @@ struct VerificationCodeView: View {
                 .multilineTextAlignment(.center)
                 .padding()
                 .foregroundStyle(.text)
+                .padding(.top, 200)
             
             Text("Отправили код на номер \(viewModel.phoneNumber)")
                 .font(.Typography.Body.body2)
                 .lineSpacing(24)
                 .multilineTextAlignment(.center)
-                .padding()
+                .padding(.bottom)
+                .padding(.bottom)
                 .foregroundStyle(.text)
             
             HStack(spacing: 10) {
@@ -61,6 +63,19 @@ struct VerificationCodeView: View {
                     isTextFieldFocused = true
                 }
             
+            VStack {
+                if viewModel.isButtonDisabled {
+                    Text("Повторный запрос через \(viewModel.remainingSeconds) сек")
+                        .font(.Typography.Metadata.metadata1)
+                        .lineSpacing(16)
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.gray)
+                        .padding(.top, 10)
+                }
+            }
+            
+            Spacer()
+            
             Button(action: {
                 viewModel.resetCode()
                 viewModel.startCooldown()
@@ -72,17 +87,7 @@ struct VerificationCodeView: View {
                     .padding()
             }
             .disabled(viewModel.isButtonDisabled)
-            
-            VStack {
-                if viewModel.isButtonDisabled {
-                    Text("Повторный запрос через \(viewModel.remainingSeconds) сек")
-                        .font(.Typography.Metadata.metadata1)
-                        .lineSpacing(16)
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.gray)
-                        .padding(.top, 10)
-                }
-            }
+            .padding(.bottom, 250)
         }
         .navigationTitle("")
         .onChange(of: viewModel.isCodeCorrect) { oldValue, newValue in

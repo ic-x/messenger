@@ -23,7 +23,7 @@ struct VerificationPhoneView: View {
                 .font(.Typography.Body.body2)
                 .lineSpacing(24)
                 .multilineTextAlignment(.center)
-                .padding()
+                .padding(.bottom)
                 .foregroundStyle(.text)
             
             HStack {
@@ -59,6 +59,7 @@ struct VerificationPhoneView: View {
             .lineSpacing(24)
             .foregroundStyle(.text)
             .padding()
+            .padding(.bottom)
             
             Button(action: {
                 let formattedPhoneNumber = "\(viewModel.selectedCountry.code) \(viewModel.phoneNumber)"

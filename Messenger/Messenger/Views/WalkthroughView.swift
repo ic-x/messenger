@@ -16,13 +16,16 @@ struct WalkthroughView: View {
             Image("Illustration")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
+                .frame(width: 300, height: 300)
+                .padding(.top, 80)
             
             Text("Общайтесь с друзьями и близкими легко")
                 .font(.Typography.Heading.h2)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.text)
-                .padding()
+                .padding(50)
+            
+            Spacer()
             
             VStack {
                 Text("Нажимая кнопку «Начать общаться», я соглашаюсь с ")
@@ -68,6 +71,7 @@ struct WalkthroughView: View {
                     .cornerRadius(30)
             }
             .padding(.horizontal, 40)
+            .padding(.bottom, 30)
         }
         .navigationTitle("")
     }
