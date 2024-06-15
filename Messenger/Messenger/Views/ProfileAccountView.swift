@@ -66,12 +66,22 @@ struct ProfileAccountView: View {
         .padding()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Text("Профиль")
-                    .font(.Typography.Subheading.sub1)
-                    .lineSpacing(30)
-                    .foregroundStyle(.text)
+                HStack{
+                    Button(action: {
+                        if !navigationPath.isEmpty {
+                            navigationPath.removeLast()
+                        }
+                    }) {
+                        Image("ChevronLeft")
+                    }
+                    Text("Профиль")
+                        .font(.Typography.Subheading.sub1)
+                        .lineSpacing(30)
+                        .foregroundStyle(.text)
+                }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

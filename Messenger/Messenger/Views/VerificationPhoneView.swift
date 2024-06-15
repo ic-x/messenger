@@ -79,6 +79,18 @@ struct VerificationPhoneView: View {
             .padding(.horizontal, 40)
             .padding()
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    if !navigationPath.isEmpty {
+                        navigationPath.removeLast()
+                    }
+                }) {
+                    Image("ChevronLeft")
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
         .navigationTitle("")
     }
 }

@@ -89,6 +89,18 @@ struct VerificationCodeView: View {
             .disabled(viewModel.isButtonDisabled)
             .padding(.bottom, 250)
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    if !navigationPath.isEmpty {
+                        navigationPath.removeLast()
+                    }
+                }) {
+                    Image("ChevronLeft")
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
         .navigationTitle("")
         .onChange(of: viewModel.isCodeCorrect) { oldValue, newValue in
             if newValue {
