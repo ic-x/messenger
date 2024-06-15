@@ -32,6 +32,7 @@ struct VerificationPhoneView: View {
                 }) {
                     HStack {
                         Text("\(viewModel.selectedCountry.flag) \(viewModel.selectedCountry.code)")
+                            .padding()
                     }
                 }
                 .sheet(isPresented: $viewModel.isPickerPresented) {
@@ -55,9 +56,14 @@ struct VerificationPhoneView: View {
                         }
                 }
             }
+            .background(
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(.inputField)
+            )
             .font(.Typography.Body.body1)
             .lineSpacing(24)
             .foregroundStyle(.text)
+            .padding()
             .padding()
             .padding(.bottom)
             
