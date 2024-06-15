@@ -10,6 +10,7 @@ import SwiftUI
 struct VerificationCodeView: View {
     @Binding var navigationPath: NavigationPath
     @ObservedObject var viewModel: VerificationCodeViewModel
+    @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
         VStack {
@@ -26,9 +27,24 @@ struct VerificationCodeView: View {
                 .padding()
                 .foregroundStyle(.text)
             
-            TextField("Код подтверждения", text: $viewModel.code)
+            HStack(spacing: 10) {
+                ForEach(0..<4, id: \.self) { index in
+                    let digit = viewModel.code.count > index ? String(viewModel.code[viewModel.code.index(viewModel.code.startIndex, offsetBy: index)]) : ""
+                    CodeDigitView(digit: digit)
+                }
+            }
+            .padding()
+            .onTapGesture {
+                isTextFieldFocused = true
+            }
+            
+            TextField("", text: $viewModel.code)
                 .keyboardType(.numberPad)
-                .padding()
+                .textContentType(.oneTimeCode)
+                .foregroundStyle(.clear)
+                .accentColor(.clear)
+                .frame(width: 1, height: 1)
+                .focused($isTextFieldFocused)
                 .onChange(of: viewModel.code) { oldValue, newValue in
                     viewModel.validateCode()
                 }
@@ -41,8 +57,9 @@ struct VerificationCodeView: View {
                     Text("Неправильный код подтверждения")
                         .font(.Typography.Body.body1)
                 }
-                .font(.Typography.Heading.h1)
-                .multilineTextAlignment(.center)
+                .onAppear {
+                    isTextFieldFocused = true
+                }
             
             Button(action: {
                 viewModel.resetCode()
@@ -57,8 +74,6 @@ struct VerificationCodeView: View {
             .disabled(viewModel.isButtonDisabled)
             
             VStack {
-                Spacer()
-                
                 if viewModel.isButtonDisabled {
                     Text("Повторный запрос через \(viewModel.remainingSeconds) сек")
                         .font(.Typography.Metadata.metadata1)

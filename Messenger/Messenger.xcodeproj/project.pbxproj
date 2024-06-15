@@ -44,6 +44,7 @@
 		17B20CF22C1CCE64004DC637 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CE02C1CCE64004DC637 /* SF-Pro-Display-Semibold.otf */; };
 		17B20CF32C1CCE64004DC637 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CE12C1CCE64004DC637 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		17B20CF42C1CCE64004DC637 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CE22C1CCE64004DC637 /* SF-Pro-Display-Thin.otf */; };
+		17EC8E342C1DCE9900B01E36 /* CodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */; };
 		17F74EE72C1AF36700EAF107 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EE62C1AF36700EAF107 /* Country.swift */; };
 		17F74EE92C1AF37600EAF107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EE82C1AF37600EAF107 /* User.swift */; };
 		17F74EEB2C1AF38400EAF107 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */; };
@@ -112,6 +113,7 @@
 		17B20CE02C1CCE64004DC637 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		17B20CE12C1CCE64004DC637 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		17B20CE22C1CCE64004DC637 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDigitView.swift; sourceTree = "<group>"; };
 		17F74EE62C1AF36700EAF107 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17F74EE82C1AF37600EAF107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				17323ED52C1A226E0081F08A /* VerificationCodeView.swift */,
 				173A7AF02C1A3A530019C33D /* CountryPickerView.swift */,
 				173A7AF22C1A52150019C33D /* ProfileAccountView.swift */,
+				17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				17F74F012C1AF44C00EAF107 /* VerificationCodeViewModel.swift in Sources */,
 				17F74F032C1AF45800EAF107 /* ProfileAccountViewModel.swift in Sources */,
 				173A7AF32C1A52150019C33D /* ProfileAccountView.swift in Sources */,
+				17EC8E342C1DCE9900B01E36 /* CodeDigitView.swift in Sources */,
 				17F74EFF2C1AF44100EAF107 /* VerificationPhoneViewModel.swift in Sources */,
 				172618862C1B2EA0008DD3A0 /* TermsOfUseViewModel.swift in Sources */,
 				17F74EE92C1AF37600EAF107 /* User.swift in Sources */,
