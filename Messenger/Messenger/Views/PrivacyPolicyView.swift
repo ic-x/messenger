@@ -48,7 +48,13 @@ struct PrivacyPolicyView: View {
             }) {
                 Text("Закрыть")
                     .font(.Typography.Subheading.sub2)
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(.textButton)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(.textButton)
+                    )
                     .padding()
             }
         }

@@ -95,6 +95,7 @@ struct VerificationCodeView: View {
                     .font(.Typography.Subheading.sub2)
                     .lineSpacing(28)
                     .multilineTextAlignment(.center)
+                    .foregroundStyle(.textButton)
                     .padding()
             }
             .disabled(viewModel.isButtonDisabled)
