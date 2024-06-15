@@ -88,4 +88,3 @@ struct ProfileAccountView: View {
 #Preview {
     ProfileAccountView(navigationPath: .constant(NavigationPath()), viewModel: ProfileAccountViewModel(phoneNumber: "+7 999 999-99-99"))
 }
-
