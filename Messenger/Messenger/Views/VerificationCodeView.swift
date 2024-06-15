@@ -29,6 +29,17 @@ struct VerificationCodeView: View {
                 .padding(.bottom)
                 .foregroundStyle(.text)
             
+            Text("CURRENT CODE 1234")
+                .font(.caption2)
+                .multilineTextAlignment(.center)
+                .padding(3)
+                .background(
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(.disclaimer)
+                )
+                .padding(.bottom)
+                .foregroundStyle(.warning)
+            
             HStack(spacing: 10) {
                 ForEach(0..<4, id: \.self) { index in
                     let digit = viewModel.code.count > index ? String(viewModel.code[viewModel.code.index(viewModel.code.startIndex, offsetBy: index)]) : ""
