@@ -52,11 +52,15 @@ struct WalkthroughView: View {
                     .font(.Typography.Subheading.sub2)
                     .lineSpacing(28)
                     .multilineTextAlignment(.center)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(.button)
+                    .foregroundColor(.buttonText)
+                    .cornerRadius(30)
             }
-            .padding()
+            .padding(.horizontal, 40)
         }
         .navigationTitle("")
-        .background(Color("BrandColorDark"))
     }
 }
 

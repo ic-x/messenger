@@ -61,9 +61,14 @@ struct VerificationPhoneView: View {
                     .font(.Typography.Subheading.sub2)
                     .lineSpacing(28)
                     .multilineTextAlignment(.center)
-                    .foregroundStyle(viewModel.isPhoneNumberValid ? .blue : .gray)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.buttonText)
+                    .background(viewModel.isPhoneNumberValid ? .button : .inactiveButton)
+                    .cornerRadius(30)
             }
             .disabled(!viewModel.isPhoneNumberValid)
+            .padding(.horizontal, 40)
             .padding()
         }
         .navigationTitle("")

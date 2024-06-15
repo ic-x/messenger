@@ -30,8 +30,14 @@ struct ProfileAccountView: View {
                     .font(.Typography.Subheading.sub2)
                     .lineSpacing(28)
                     .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .foregroundStyle(.buttonText)
+                    .background(viewModel.isSaveButtonDisabled ? .inactiveButton : .button)
+                    .cornerRadius(30)
             }
             .disabled(viewModel.isSaveButtonDisabled)
+            .padding(.horizontal, 40)
         }
         .padding()
         .toolbar {
