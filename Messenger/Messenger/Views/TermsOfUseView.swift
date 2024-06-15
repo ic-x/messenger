@@ -17,21 +17,29 @@ struct TermsOfUseView: View {
                 LazyVStack(alignment: .leading, spacing: 20) {
                     Text("Условия использования")
                         .font(.Typography.Heading.h2)
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                        .lineSpacing(3)
+                        .padding(.bottom, 9)
                     
                     ForEach(viewModel.sections, id: \.title) { section in
                         VStack(alignment: .leading, spacing: 5) {
                             Text(section.title)
                                 .font(.Typography.Subheading.sub1)
+                                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                .lineSpacing(3)
+                                .padding(.bottom, 1)
+                            
                             Text(section.content)
                                 .font(.Typography.Body.body2)
-                                .multilineTextAlignment(.leading)
-                                .lineSpacing(2)
+                                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                .lineSpacing(3)
+                                .padding(.bottom, 6)
                         }
                     }
                 }
+                .foregroundStyle(.text)
                 .padding()
             }
-            .foregroundStyle(.text)
             
             Spacer()
             
@@ -40,6 +48,7 @@ struct TermsOfUseView: View {
             }) {
                 Text("Закрыть")
                     .font(.Typography.Subheading.sub2)
+                    .foregroundStyle(.textButton)
                     .padding()
             }
         }
