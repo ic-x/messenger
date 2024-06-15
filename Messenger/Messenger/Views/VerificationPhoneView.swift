@@ -31,9 +31,12 @@ struct VerificationPhoneView: View {
                     viewModel.isPickerPresented.toggle()
                 }) {
                     HStack {
-                        Text("\(viewModel.selectedCountry.flag) \(viewModel.selectedCountry.code)")
-                            .padding()
+                        Image(viewModel.selectedCountry.flagImageName)
+                            .resizable()
+                            .frame(width: 18, height: 12)
+                        Text(viewModel.selectedCountry.code)
                     }
+                    .padding()
                 }
                 .sheet(isPresented: $viewModel.isPickerPresented) {
                     CountryPickerView(

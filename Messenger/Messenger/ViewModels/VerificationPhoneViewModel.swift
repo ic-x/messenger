@@ -14,20 +14,20 @@ class VerificationPhoneViewModel: ObservableObject {
     @Published var searchText = ""
     
     static let countries: [Country] = [
-        Country(name: "США", code: "+1", flag: "🇺🇸"),
-        Country(name: "Китай", code: "+86", flag: "🇨🇳"),
-        Country(name: "Турция", code: "+90", flag: "🇹🇷"),
-        Country(name: "Великобритания", code: "+44", flag: "🇬🇧"),
-        Country(name: "Южная Корея", code: "+82", flag: "🇰🇷"),
-        Country(name: "ОАЭ", code: "+971", flag: "🇦🇪"),
-        Country(name: "Россия", code: "+7", flag: "🇷🇺"),
-        Country(name: "Казахстан", code: "+7", flag: "🇰🇿"),
-        Country(name: "Азербайджан", code: "+994", flag: "🇦🇿"),
-        Country(name: "Узбекистан", code: "+998", flag: "🇺🇿"),
-        Country(name: "Беларусь", code: "+375", flag: "🇧🇾"),
-        Country(name: "Армения", code: "+374", flag: "🇦🇲"),
-        Country(name: "Грузия", code: "+995", flag: "🇬🇪"),
-        Country(name: "Кыргызстан", code: "+996", flag: "🇰🇬"),
+        Country(name: "США", code: "+1", flagImageName: "US"),
+        Country(name: "Китай", code: "+86", flagImageName: "CN"),
+        Country(name: "Турция", code: "+90", flagImageName: "TR"),
+        Country(name: "Великобритания", code: "+44", flagImageName: "GB"),
+        Country(name: "Южная Корея", code: "+82", flagImageName: "KR"),
+        Country(name: "ОАЭ", code: "+971", flagImageName: "AE"),
+        Country(name: "Россия", code: "+7", flagImageName: "RU"),
+        Country(name: "Казахстан", code: "+7", flagImageName: "KZ"),
+        Country(name: "Азербайджан", code: "+994", flagImageName: "AZ"),
+        Country(name: "Узбекистан", code: "+998", flagImageName: "UZ"),
+        Country(name: "Беларусь", code: "+375", flagImageName: "BY"),
+        Country(name: "Армения", code: "+374", flagImageName: "AM"),
+        Country(name: "Грузия", code: "+995", flagImageName: "GE"),
+        Country(name: "Кыргызстан", code: "+996", flagImageName: "KG"),
     ]
     
     var filteredCountries: [Country] {
