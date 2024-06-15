@@ -17,12 +17,14 @@ struct VerificationPhoneView: View {
                 .font(.Typography.Heading.h2)
                 .multilineTextAlignment(.center)
                 .padding()
+                .foregroundStyle(.text)
             
             Text("Мы вышлем код подтверждения на указанный номер")
                 .font(.Typography.Body.body2)
                 .lineSpacing(24)
                 .multilineTextAlignment(.center)
                 .padding()
+                .foregroundStyle(.text)
             
             HStack {
                 Button(action: {
@@ -30,7 +32,6 @@ struct VerificationPhoneView: View {
                 }) {
                     HStack {
                         Text("\(viewModel.selectedCountry.flag) \(viewModel.selectedCountry.code)")
-                            .foregroundStyle(.primary)
                     }
                 }
                 .sheet(isPresented: $viewModel.isPickerPresented) {
@@ -41,16 +42,22 @@ struct VerificationPhoneView: View {
                         viewModel: CountryPickerViewModel(countries: viewModel.filteredCountries)
                     )
                 }
-                .font(.Typography.Body.body1)
-                .lineSpacing(24)
-                TextField("000 000-00-00", text: $viewModel.phoneNumber)
-                    .keyboardType(.phonePad)
-                    .onChange(of: viewModel.phoneNumber) { oldValue, newValue in
-                        viewModel.phoneNumber = viewModel.formatPhoneNumber(String(newValue.filter { "0123456789".contains($0) }))
-                    }
-                    .font(.Typography.Body.body1)
-                    .lineSpacing(24)
+                
+                ZStack(alignment: .leading) {
+                    Text("000 000-00-00")
+                        .foregroundStyle(.brandPlaceholder)
+                        .opacity(viewModel.phoneNumber.isEmpty ? 1 : 0)
+                    
+                    TextField("", text: $viewModel.phoneNumber)
+                        .keyboardType(.phonePad)
+                        .onChange(of: viewModel.phoneNumber) { oldValue, newValue in
+                            viewModel.phoneNumber = viewModel.formatPhoneNumber(String(newValue.filter { "0123456789".contains($0) }))
+                        }
+                }
             }
+            .font(.Typography.Body.body1)
+            .lineSpacing(24)
+            .foregroundStyle(.text)
             .padding()
             
             Button(action: {

@@ -17,12 +17,14 @@ struct VerificationCodeView: View {
                 .font(.Typography.Heading.h2)
                 .multilineTextAlignment(.center)
                 .padding()
+                .foregroundStyle(.text)
             
             Text("Отправили код на номер \(viewModel.phoneNumber)")
                 .font(.Typography.Body.body2)
                 .lineSpacing(24)
                 .multilineTextAlignment(.center)
                 .padding()
+                .foregroundStyle(.text)
             
             TextField("Код подтверждения", text: $viewModel.code)
                 .keyboardType(.numberPad)

@@ -31,6 +31,7 @@ struct PrivacyPolicyView: View {
                 }
                 .padding()
             }
+            .foregroundStyle(.text)
             
             Spacer()
             

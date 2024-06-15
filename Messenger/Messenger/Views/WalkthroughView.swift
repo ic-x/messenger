@@ -16,6 +16,7 @@ struct WalkthroughView: View {
             Text("Общайтесь с друзьями и близкими легко")
                 .font(.Typography.Heading.h2)
                 .multilineTextAlignment(.center)
+                .foregroundStyle(.text)
                 .padding()
             
             VStack {
@@ -25,6 +26,7 @@ struct WalkthroughView: View {
                         viewModel.showPrivacyPolicy()
                     }) {
                         Text("политикой конфиденциальности")
+                            .foregroundStyle(.brandDisclaimer)
                     }
                     .sheet(isPresented: $viewModel.showingPrivacyPolicy) {
                         PrivacyPolicyView()
@@ -34,6 +36,7 @@ struct WalkthroughView: View {
                         viewModel.showTermsOfUse()
                     }) {
                         Text("условиями использования")
+                            .foregroundStyle(.brandDisclaimer)
                     }
                     .sheet(isPresented: $viewModel.showingTermsOfUse) {
                         TermsOfUseView()
@@ -44,6 +47,7 @@ struct WalkthroughView: View {
             .lineSpacing(16)
             .frame(width: 327, height: 32)
             .multilineTextAlignment(.center)
+            .foregroundStyle(.disclaimer)
             
             Button(action: {
                 viewModel.navigateToVerificationPhoneView(navigationPath: $navigationPath)
@@ -55,7 +59,7 @@ struct WalkthroughView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(.button)
-                    .foregroundColor(.buttonText)
+                    .foregroundStyle(.buttonText)
                     .cornerRadius(30)
             }
             .padding(.horizontal, 40)

@@ -31,6 +31,7 @@ struct TermsOfUseView: View {
                 }
                 .padding()
             }
+            .foregroundStyle(.text)
             
             Spacer()
             

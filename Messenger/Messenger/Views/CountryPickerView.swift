@@ -40,11 +40,13 @@ struct CountryPickerView: View {
                         .lineSpacing(24)
                     }
                 }
+                .foregroundStyle(.text)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Text("Выберите страну")
                         .font(.Typography.Heading.h2)
+                        .foregroundStyle(.text)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Отмена") {

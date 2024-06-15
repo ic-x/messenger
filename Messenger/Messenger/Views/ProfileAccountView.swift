@@ -45,6 +45,7 @@ struct ProfileAccountView: View {
                 Text("Профиль")
                     .font(.Typography.Subheading.sub1)
                     .lineSpacing(30)
+                    .foregroundStyle(.text)
             }
         }
     }
