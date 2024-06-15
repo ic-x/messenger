@@ -19,9 +19,10 @@ struct CountryPickerView: View {
                 HStack {
                     TextField("Поиск страны", text: $searchText)
                         .font(.Typography.Body.body1)
-                        .padding(10)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .padding()
+                        .foregroundStyle(.brandPlaceholder)
+                        .background(Color(.inputField))
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
                 }
                 .padding()
                 
@@ -32,12 +33,15 @@ struct CountryPickerView: View {
                     }) {
                         HStack {
                             Text(country.flag)
+                            
                             Text(country.name)
+                                .font(.Typography.Body.body2)
+                            
                             Spacer()
+                            
                             Text(country.code)
+                                .font(.Typography.Body.body1)
                         }
-                        .font(.Typography.Body.body1)
-                        .lineSpacing(24)
                     }
                 }
                 .foregroundStyle(.text)
@@ -45,14 +49,15 @@ struct CountryPickerView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Text("Выберите страну")
-                        .font(.Typography.Heading.h2)
+                        .font(.Typography.Subheading.sub1)
                         .foregroundStyle(.text)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Отмена") {
                         isPresented = false
                     }
-                    .font(.Typography.Subheading.sub2)
+                    .font(.Typography.Subheading.sub1)
+                    .foregroundStyle(.textButton)
                 }
             }
         }
