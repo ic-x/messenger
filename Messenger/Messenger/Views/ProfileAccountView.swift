@@ -13,15 +13,38 @@ struct ProfileAccountView: View {
     
     var body: some View {
         VStack {
+            Image("ChangeAvatar")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+                .padding(.bottom, 20)
+            
             TextField("Имя (обязательно)", text: $viewModel.firstName)
-                .border(!viewModel.firstName.isEmpty && !viewModel.isNameValid(viewModel.firstName) ? Color.red : Color.clear)
                 .font(.Typography.Body.body1)
-                .lineSpacing(24)
+                .padding(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(.inputField)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(viewModel.firstName.isEmpty || viewModel.isNameValid(viewModel.firstName) ? .inputField : .danger, lineWidth: 1)
+                )
+                .padding(.horizontal, 20)
             
             TextField("Фамилия (опционально)", text: $viewModel.lastName)
-                .border(!viewModel.lastName.isEmpty && !viewModel.isNameValid(viewModel.lastName) ? Color.red : Color.clear)
                 .font(.Typography.Body.body1)
-                .lineSpacing(24)
+                .padding(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(.inputField)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(viewModel.lastName.isEmpty || viewModel.isNameValid(viewModel.lastName) ? .inputField : .danger, lineWidth: 1)
+                )
+                .padding(.horizontal, 20)
+                .padding(.top, 8)
             
             Button(action: {
                 viewModel.saveUser()
@@ -38,6 +61,7 @@ struct ProfileAccountView: View {
             }
             .disabled(viewModel.isSaveButtonDisabled)
             .padding(.horizontal, 40)
+            .padding(.top, 20)
         }
         .padding()
         .toolbar {
@@ -54,3 +78,4 @@ struct ProfileAccountView: View {
 #Preview {
     ProfileAccountView(navigationPath: .constant(NavigationPath()), viewModel: ProfileAccountViewModel(phoneNumber: "+7 999 999-99-99"))
 }
+

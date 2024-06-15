@@ -13,6 +13,11 @@ struct WalkthroughView: View {
     
     var body: some View {
         VStack {
+            Image("Illustration")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
+            
             Text("Общайтесь с друзьями и близкими легко")
                 .font(.Typography.Heading.h2)
                 .multilineTextAlignment(.center)
