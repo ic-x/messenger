@@ -56,6 +56,7 @@ struct WalkthroughView: View {
             .padding()
         }
         .navigationTitle("")
+        .background(Color("BrandColorDark"))
     }
 }
 

@@ -24,6 +24,8 @@ struct TermsOfUseView: View {
                                 .font(.Typography.Subheading.sub1)
                             Text(section.content)
                                 .font(.Typography.Body.body2)
+                                .multilineTextAlignment(.leading)
+                                .lineSpacing(2)
                         }
                     }
                 }
