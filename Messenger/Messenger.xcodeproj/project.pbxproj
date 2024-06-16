@@ -15,9 +15,6 @@
 		17323EA62C1A0A6F0081F08A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323EA52C1A0A6F0081F08A /* ContentView.swift */; };
 		17323EA82C1A0A710081F08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17323EA72C1A0A710081F08A /* Assets.xcassets */; };
 		17323EAB2C1A0A710081F08A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17323EAA2C1A0A710081F08A /* Preview Assets.xcassets */; };
-		17323EB52C1A0A710081F08A /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323EB42C1A0A710081F08A /* MessengerTests.swift */; };
-		17323EBF2C1A0A710081F08A /* MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323EBE2C1A0A710081F08A /* MessengerUITests.swift */; };
-		17323EC12C1A0A710081F08A /* MessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323EC02C1A0A710081F08A /* MessengerUITestsLaunchTests.swift */; };
 		17323ECE2C1A0B270081F08A /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323ECD2C1A0B270081F08A /* WalkthroughView.swift */; };
 		17323ED02C1A0B5C0081F08A /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323ECF2C1A0B5C0081F08A /* PrivacyPolicyView.swift */; };
 		17323ED22C1A0B840081F08A /* TermsOfUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323ED12C1A0B840081F08A /* TermsOfUseView.swift */; };
@@ -67,10 +64,7 @@
 		17323EA72C1A0A710081F08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17323EAA2C1A0A710081F08A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17323EB02C1A0A710081F08A /* MessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17323EB42C1A0A710081F08A /* MessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerTests.swift; sourceTree = "<group>"; };
 		17323EBA2C1A0A710081F08A /* MessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17323EBE2C1A0A710081F08A /* MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITests.swift; sourceTree = "<group>"; };
-		17323EC02C1A0A710081F08A /* MessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		17323ECD2C1A0B270081F08A /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		17323ECF2C1A0B5C0081F08A /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		17323ED12C1A0B840081F08A /* TermsOfUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseView.swift; sourceTree = "<group>"; };
@@ -122,8 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				17323EA22C1A0A6F0081F08A /* Messenger */,
-				17323EB32C1A0A710081F08A /* MessengerTests */,
-				17323EBD2C1A0A710081F08A /* MessengerUITests */,
 				17323EA12C1A0A6F0081F08A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,23 +152,6 @@
 				17323EAA2C1A0A710081F08A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		17323EB32C1A0A710081F08A /* MessengerTests */ = {
-			isa = PBXGroup;
-			children = (
-				17323EB42C1A0A710081F08A /* MessengerTests.swift */,
-			);
-			path = MessengerTests;
-			sourceTree = "<group>";
-		};
-		17323EBD2C1A0A710081F08A /* MessengerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				17323EBE2C1A0A710081F08A /* MessengerUITests.swift */,
-				17323EC02C1A0A710081F08A /* MessengerUITestsLaunchTests.swift */,
-			);
-			path = MessengerUITests;
 			sourceTree = "<group>";
 		};
 		17B20CD02C1CCDB6004DC637 /* Fonts */ = {
@@ -392,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17323EB52C1A0A710081F08A /* MessengerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,8 +374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17323EC12C1A0A710081F08A /* MessengerUITestsLaunchTests.swift in Sources */,
-				17323EBF2C1A0A710081F08A /* MessengerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
