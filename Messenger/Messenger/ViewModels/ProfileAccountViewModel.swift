@@ -10,6 +10,7 @@ import Foundation
 class ProfileAccountViewModel: ObservableObject {
     @Published var firstName: String = ""
     @Published var lastName: String = ""
+    @Published var errorMessage: String?
     var phoneNumber: String
     
     init(phoneNumber: String) {
@@ -24,7 +25,13 @@ class ProfileAccountViewModel: ObservableObject {
     
     func saveUser() {
         let newUser = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
-        print(newUser)
+        do {
+            try newUser.saveToUserDefaults()
+            print(newUser)
+        } catch {
+            errorMessage = error.localizedDescription
+            print(errorMessage ?? "Error")
+        }
     }
     
     var isSaveButtonDisabled: Bool {

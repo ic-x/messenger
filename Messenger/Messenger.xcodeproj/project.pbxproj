@@ -254,9 +254,9 @@
 				17323ED12C1A0B840081F08A /* TermsOfUseView.swift */,
 				17323ED32C1A0BB70081F08A /* VerificationPhoneView.swift */,
 				17323ED52C1A226E0081F08A /* VerificationCodeView.swift */,
+				17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */,
 				173A7AF02C1A3A530019C33D /* CountryPickerView.swift */,
 				173A7AF22C1A52150019C33D /* ProfileAccountView.swift */,
-				17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
