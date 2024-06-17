@@ -100,7 +100,6 @@ struct VerificationPhoneView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationTitle("")
     }
 }
 

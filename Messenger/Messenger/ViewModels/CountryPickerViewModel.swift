@@ -8,8 +8,8 @@
 import SwiftUI
 
 class CountryPickerViewModel: ObservableObject {
-    @Published var countries: [Country]
     @Published var searchText: String = ""
+    @Published var countries: [Country]
     
     init(countries: [Country]) {
         self.countries = countries

@@ -11,4 +11,5 @@ enum NavigationItem: Hashable {
     case verificationPhoneView
     case verificationCodeView(phoneNumber: String)
     case profileAccountView(phoneNumber: String)
+    case mainView
 }

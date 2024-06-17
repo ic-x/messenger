@@ -58,7 +58,6 @@ struct TermsOfUseView: View {
                     .padding()
             }
         }
-        .navigationTitle("Условия использования")
     }
 }
 

@@ -101,6 +101,12 @@ struct VerificationCodeView: View {
             .disabled(viewModel.isButtonDisabled)
             .padding(.bottom, 250)
         }
+        .onChange(of: viewModel.isCodeCorrect) { oldValue, newValue in
+            if newValue {
+                navigationPath.append(NavigationItem.profileAccountView(phoneNumber: viewModel.phoneNumber))
+                viewModel.isCodeCorrect = false
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button(action: {
@@ -113,13 +119,6 @@ struct VerificationCodeView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationTitle("")
-        .onChange(of: viewModel.isCodeCorrect) { oldValue, newValue in
-            if newValue {
-                navigationPath.append(NavigationItem.profileAccountView(phoneNumber: viewModel.phoneNumber))
-                viewModel.isCodeCorrect = false
-            }
-        }
     }
 }
 

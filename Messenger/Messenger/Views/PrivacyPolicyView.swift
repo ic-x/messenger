@@ -58,7 +58,6 @@ struct PrivacyPolicyView: View {
                     .padding()
             }
         }
-        .navigationTitle("Политика конфиденциальности")
     }
 }
 

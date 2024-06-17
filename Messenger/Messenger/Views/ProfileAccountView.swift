@@ -48,6 +48,8 @@ struct ProfileAccountView: View {
             
             Button(action: {
                 viewModel.saveUser()
+                navigationPath.removeLast(navigationPath.count)
+                navigationPath.append(NavigationItem.mainView)
             }) {
                 Text("Сохранить")
                     .font(.Typography.Subheading.sub2)
