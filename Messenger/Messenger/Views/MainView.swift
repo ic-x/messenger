@@ -6,62 +6,64 @@
 //
 
 import SwiftUI
+import os.log
 
 struct MainView: View {
     @Binding var selectedTab: Tab
+    @State private var isShowingNewContactView = false
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            ContactsView()
-                .tabItem {
-                    Image(systemName: "person.2.fill")
-                }
-                .tag(Tab.contacts)
-            
-            ChatsView()
-                .tabItem {
-                    Image(systemName: "message.fill")
-                }
-                .tag(Tab.chats)
-            
-            MoreView()
-                .tabItem {
-                    Image(systemName: "ellipsis.circle.fill")
-                }
-                .tag(Tab.more)
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Text(titleForSelectedTab(selectedTab))
+            TabView(selection: $selectedTab) {
+                ContactsView()
+                    .tabItem {
+                        Image(systemName: "person.2.fill")
+                    }
+                    .tag(Tab.contacts)
+                
+                ChatsView()
+                    .tabItem {
+                        Image(systemName: "message.fill")
+                    }
+                    .tag(Tab.chats)
+                
+                MoreView()
+                    .tabItem {
+                        Image(systemName: "ellipsis.circle.fill")
+                    }
+                    .tag(Tab.more)
             }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                HStack {
-                    switch selectedTab {
-                    case .contacts:
-                        Button(action: {
-                            print("Добавить контакт")
-                        }) {
-                            Image(systemName: "plus")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text(titleForSelectedTab(selectedTab))
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    HStack {
+                        switch selectedTab {
+                        case .contacts:
+                            Button(action: {
+                                os_log("%@", log: log, type: .info, "Добавить контакт")
+                            }) {
+                                Image(systemName: "plus")
+                            }
+                        case .chats:
+                            Button(action: {
+                                os_log("%@", log: log, type: .info, "Создать чат")
+                            }) {
+                                Image(systemName: "plus")
+                            }
+                            Button(action: {
+                                os_log("%@", log: log, type: .info, "Прочитать все сообщения")
+                            }) {
+                                Image(systemName: "envelope.open.fill")
+                            }
+                        default:
+                            EmptyView()
                         }
-                    case .chats:
-                        Button(action: {
-                            print("Создать чат")
-                        }) {
-                            Image(systemName: "plus")
-                        }
-                        Button(action: {
-                            print("Прочитать все сообщения")
-                        }) {
-                            Image(systemName: "envelope.open.fill")
-                        }
-                    default:
-                        EmptyView()
                     }
                 }
             }
-        }
-        .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
     
     private func titleForSelectedTab(_ tab: Tab) -> String {

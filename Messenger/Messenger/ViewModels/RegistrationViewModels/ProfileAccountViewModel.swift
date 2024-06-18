@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os.log
 
 class ProfileAccountViewModel: ObservableObject {
     @Published var firstName: String = ""
@@ -27,10 +28,11 @@ class ProfileAccountViewModel: ObservableObject {
         let newUser = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
         do {
             try newUser.saveToUserDefaults()
-            print(newUser)
+            os_log("%@", log: log, type: .info, String(describing: newUser))
         } catch {
             errorMessage = error.localizedDescription
             print(errorMessage ?? "Error")
+            os_log("%@", log: log, type: .error, errorMessage ?? "Error")
         }
     }
     

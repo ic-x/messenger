@@ -9,8 +9,10 @@ import SwiftUI
 
 struct MoreView: View {
     var body: some View {
-        VStack {
-            Text("Дополнительные опции")
+        NavigationStack {
+            VStack {
+                Text("Дополнительные опции")
+            }
         }
     }
 }

@@ -30,6 +30,9 @@
 		17323ED62C1A226E0081F08A /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17323ED52C1A226E0081F08A /* VerificationCodeView.swift */; };
 		173A7AF12C1A3A530019C33D /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A7AF02C1A3A530019C33D /* CountryPickerView.swift */; };
 		173A7AF32C1A52150019C33D /* ProfileAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A7AF22C1A52150019C33D /* ProfileAccountView.swift */; };
+		17439D872C21C5EE0023751E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D862C21C5EE0023751E /* Contact.swift */; };
+		17439D902C21CD010023751E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D8F2C21CD010023751E /* Logger.swift */; };
+		17439D942C21D3170023751E /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D932C21D3170023751E /* ContactDetailsView.swift */; };
 		1799396D2C1CBD57000711E5 /* SF-Pro-Display-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1799395B2C1CBD55000711E5 /* SF-Pro-Display-UltralightItalic.otf */; };
 		179AA86D2C1CD43A0005B5D7 /* Font+Typography.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */; };
 		17B20CE32C1CCE64004DC637 /* SF-Pro-Display-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CD12C1CCE62004DC637 /* SF-Pro-Display-ThinItalic.otf */; };
@@ -103,6 +106,9 @@
 		17323ED52C1A226E0081F08A /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
 		173A7AF02C1A3A530019C33D /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		173A7AF22C1A52150019C33D /* ProfileAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountView.swift; sourceTree = "<group>"; };
+		17439D862C21C5EE0023751E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		17439D8F2C21CD010023751E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		17439D932C21D3170023751E /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
 		1799395B2C1CBD55000711E5 /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
 		1799397F2C1CBD71000711E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Typography.swift.swift"; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 				17B20CD02C1CCDB6004DC637 /* Fonts */,
 				17323EA92C1A0A710081F08A /* Preview Content */,
 				179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */,
+				17439D8F2C21CD010023751E /* Logger.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -217,6 +224,60 @@
 				17323EC02C1A0A710081F08A /* MessengerUITestsLaunchTests.swift */,
 			);
 			path = MessengerUITests;
+			sourceTree = "<group>";
+		};
+		17439D882C21C86C0023751E /* RegistrationViews */ = {
+			isa = PBXGroup;
+			children = (
+				17323ECD2C1A0B270081F08A /* WalkthroughView.swift */,
+				17323ECF2C1A0B5C0081F08A /* PrivacyPolicyView.swift */,
+				17323ED12C1A0B840081F08A /* TermsOfUseView.swift */,
+				17323ED32C1A0BB70081F08A /* VerificationPhoneView.swift */,
+				17323ED52C1A226E0081F08A /* VerificationCodeView.swift */,
+				17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */,
+				173A7AF02C1A3A530019C33D /* CountryPickerView.swift */,
+				173A7AF22C1A52150019C33D /* ProfileAccountView.swift */,
+			);
+			path = RegistrationViews;
+			sourceTree = "<group>";
+		};
+		17439D892C21C8CE0023751E /* ContactsViews */ = {
+			isa = PBXGroup;
+			children = (
+				1730B3AA2C2062F80014F1BF /* ContactsView.swift */,
+				17439D932C21D3170023751E /* ContactDetailsView.swift */,
+			);
+			path = ContactsViews;
+			sourceTree = "<group>";
+		};
+		17439D8A2C21C8D90023751E /* ChatsViews */ = {
+			isa = PBXGroup;
+			children = (
+				1730B3A62C2062C90014F1BF /* ChatsView.swift */,
+			);
+			path = ChatsViews;
+			sourceTree = "<group>";
+		};
+		17439D8B2C21C8E30023751E /* MoreViews */ = {
+			isa = PBXGroup;
+			children = (
+				1730B3A82C2062D30014F1BF /* MoreView.swift */,
+			);
+			path = MoreViews;
+			sourceTree = "<group>";
+		};
+		17439D8E2C21C9920023751E /* RegistrationViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				17F74EFC2C1AF43400EAF107 /* WalkthroughViewModel.swift */,
+				172618812C1B2D21008DD3A0 /* PrivacyPolicyViewModel.swift */,
+				172618852C1B2EA0008DD3A0 /* TermsOfUseViewModel.swift */,
+				17F74EFE2C1AF44100EAF107 /* VerificationPhoneViewModel.swift */,
+				17F74F002C1AF44C00EAF107 /* VerificationCodeViewModel.swift */,
+				172618892C1B31AA008DD3A0 /* CountryPickerViewModel.swift */,
+				17F74F022C1AF45800EAF107 /* ProfileAccountViewModel.swift */,
+			);
+			path = RegistrationViewModels;
 			sourceTree = "<group>";
 		};
 		17B20CD02C1CCDB6004DC637 /* Fonts */ = {
@@ -252,6 +313,7 @@
 				17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */,
 				172618872C1B30B1008DD3A0 /* ContentSection.swift */,
 				1730B3AC2C207E940014F1BF /* Tab.swift */,
+				17439D862C21C5EE0023751E /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,18 +322,11 @@
 			isa = PBXGroup;
 			children = (
 				17323EA52C1A0A6F0081F08A /* ContentView.swift */,
-				17323ECD2C1A0B270081F08A /* WalkthroughView.swift */,
-				17323ECF2C1A0B5C0081F08A /* PrivacyPolicyView.swift */,
-				17323ED12C1A0B840081F08A /* TermsOfUseView.swift */,
-				17323ED32C1A0BB70081F08A /* VerificationPhoneView.swift */,
-				17323ED52C1A226E0081F08A /* VerificationCodeView.swift */,
-				17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */,
-				173A7AF02C1A3A530019C33D /* CountryPickerView.swift */,
-				173A7AF22C1A52150019C33D /* ProfileAccountView.swift */,
+				17439D882C21C86C0023751E /* RegistrationViews */,
 				1730B3A42C2062930014F1BF /* MainView.swift */,
-				1730B3AA2C2062F80014F1BF /* ContactsView.swift */,
-				1730B3A62C2062C90014F1BF /* ChatsView.swift */,
-				1730B3A82C2062D30014F1BF /* MoreView.swift */,
+				17439D892C21C8CE0023751E /* ContactsViews */,
+				17439D8A2C21C8D90023751E /* ChatsViews */,
+				17439D8B2C21C8E30023751E /* MoreViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,13 +334,7 @@
 		17F74EE52C1AF29B00EAF107 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				17F74EFC2C1AF43400EAF107 /* WalkthroughViewModel.swift */,
-				172618812C1B2D21008DD3A0 /* PrivacyPolicyViewModel.swift */,
-				172618852C1B2EA0008DD3A0 /* TermsOfUseViewModel.swift */,
-				17F74EFE2C1AF44100EAF107 /* VerificationPhoneViewModel.swift */,
-				17F74F002C1AF44C00EAF107 /* VerificationCodeViewModel.swift */,
-				172618892C1B31AA008DD3A0 /* CountryPickerViewModel.swift */,
-				17F74F022C1AF45800EAF107 /* ProfileAccountViewModel.swift */,
+				17439D8E2C21C9920023751E /* RegistrationViewModels */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -443,9 +492,12 @@
 				17323ED22C1A0B840081F08A /* TermsOfUseView.swift in Sources */,
 				1730B3A92C2062D30014F1BF /* MoreView.swift in Sources */,
 				1726188A2C1B31AA008DD3A0 /* CountryPickerViewModel.swift in Sources */,
+				17439D902C21CD010023751E /* Logger.swift in Sources */,
 				17323EA62C1A0A6F0081F08A /* ContentView.swift in Sources */,
 				17323ED42C1A0BB70081F08A /* VerificationPhoneView.swift in Sources */,
 				17323EA42C1A0A6F0081F08A /* MessengerApp.swift in Sources */,
+				17439D872C21C5EE0023751E /* Contact.swift in Sources */,
+				17439D942C21D3170023751E /* ContactDetailsView.swift in Sources */,
 				17323ECE2C1A0B270081F08A /* WalkthroughView.swift in Sources */,
 				179AA86D2C1CD43A0005B5D7 /* Font+Typography.swift.swift in Sources */,
 				17F74EEB2C1AF38400EAF107 /* NavigationItem.swift in Sources */,
