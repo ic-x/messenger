@@ -7,60 +7,7 @@
 
 import SwiftUI
 
-struct ContactRow: View {
-    var contact: Contact
-    
-    var body: some View {
-        HStack {
-            ZStack(alignment: .topTrailing) {
-                Image(systemName: contact.avatar)
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                
-                if contact.status == "online" {
-                    Circle()
-                        .fill(Color.green)
-                        .frame(width: 10, height: 10)
-                        .offset(x: 5, y: -5)
-                }
-            }
-            
-            VStack(alignment: .leading) {
-                Text("\(contact.firstName) \(contact.lastName ?? "")")
-                    .font(.headline)
-                
-                if contact.status == "online" {
-                    Text("Онлайн")
-                        .font(.subheadline)
-                        .foregroundColor(.green)
-                } else if let lastSeen = contact.lastSeen {
-                    Text(lastSeen)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-            }
-            
-            Spacer()
-        }
-    }
-}
-
-struct SearchBar: View {
-    @Binding var text: String
-    
-    var body: some View {
-        HStack {
-            Image(systemName: "magnifyingglass")
-            TextField("Поиск", text: $text)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-        }
-        .padding()
-    }
-}
-
 struct ContactsView: View {
-    @Binding var selectedTab: Tab
-    
     @State private var searchText = ""
     @State private var selectedContact: Contact?
     @State private var navigationPath = NavigationPath()
@@ -78,7 +25,9 @@ struct ContactsView: View {
             ],
             status: "offline",
             lastSeen: "Была вчера",
-            avatar: "person.crop.circle.fill"
+            avatar: "person.crop.circle.fill",
+            hasStories: false,
+            gradientColors: [Color.red, Color.orange]
         ),
         Contact(
             firstName: "Петя",
@@ -92,7 +41,9 @@ struct ContactsView: View {
             ],
             status: "online",
             lastSeen: nil,
-            avatar: "person.crop.circle.fill"
+            avatar: nil,
+            hasStories: true,
+            gradientColors: [Color.blue, Color.purple]
         ),
         Contact(
             firstName: "Маман",
@@ -106,7 +57,9 @@ struct ContactsView: View {
             ],
             status: "offline",
             lastSeen: "Была 3 часа назад",
-            avatar: "person.crop.circle.fill"
+            avatar: "person.crop.circle.fill",
+            hasStories: false,
+            gradientColors: [Color.red, Color.orange]
         ),
         Contact(
             firstName: "Арбуз",
@@ -120,7 +73,9 @@ struct ContactsView: View {
             ],
             status: "online",
             lastSeen: nil,
-            avatar: "person.crop.circle.fill"
+            avatar: "person.crop.circle.fill",
+            hasStories: true,
+            gradientColors: [Color.red, Color.orange]
         ),
         Contact(
             firstName: "Иван",
@@ -134,7 +89,9 @@ struct ContactsView: View {
             ],
             status: "online",
             lastSeen: nil,
-            avatar: "person.crop.circle.fill"
+            avatar: nil,
+            hasStories: false,
+            gradientColors: [Color.red, Color.orange]
         ),
         Contact(
             firstName: "Лиса",
@@ -148,17 +105,19 @@ struct ContactsView: View {
             ],
             status: "offline",
             lastSeen: "Была 30 минут назад",
-            avatar: "person.crop.circle.fill"
+            avatar: nil,
+            hasStories: true,
+            gradientColors: [Color.red, Color.orange]
         )
     ]
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
             List {
-                SearchBar(text: $searchText)
-                
+                SearchBarView(text: $searchText)
+        
                 ForEach(filteredContacts) { contact in
-                    ContactRow(contact: contact)
+                    ContactRowView(contact: contact)
                         .onTapGesture {
                             navigationPath.append(contact)
                         }
@@ -183,5 +142,5 @@ struct ContactsView: View {
 }
 
 #Preview {
-    ContactsView(selectedTab: .constant(.contacts))
+    ContactsView()
 }

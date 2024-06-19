@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct MoreView: View {
-    @Binding var selectedTab: Tab
-    
     var body: some View {
         VStack {
             Text("Дополнительные опции")
@@ -18,6 +16,5 @@ struct MoreView: View {
 }
 
 #Preview {
-    @State var selectedTab = Tab.more
-    return MoreView(selectedTab: $selectedTab)
+    return MoreView()
 }

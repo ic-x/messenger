@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Contact: Identifiable, Hashable {
     let id = UUID()
@@ -15,7 +16,9 @@ struct Contact: Identifiable, Hashable {
     var socialLinks: [SocialLink]
     var status: String
     var lastSeen: String?
-    var avatar: String
+    var avatar: String?
+    var hasStories: Bool
+    var gradientColors: [Color]
 }
 
 struct SocialLink: Identifiable, Hashable {

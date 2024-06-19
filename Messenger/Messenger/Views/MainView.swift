@@ -12,29 +12,28 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ContactsView(selectedTab: $selectedTab)
+            ContactsView()
                 .tabItem {
                     Image(systemName: "person.2.fill")
                 }
-//                .tag(Tab.contacts)
+                .tag(Tab.contacts)
             
             ChatsView()
                 .tabItem {
                     Image(systemName: "message.fill")
                 }
-//                .tag(Tab.chats)
+                .tag(Tab.chats)
             
-            MoreView(selectedTab: $selectedTab)
+            MoreView()
                 .tabItem {
                     Image(systemName: "ellipsis.circle.fill")
                 }
-//                .tag(Tab.more)
+                .tag(Tab.more)
         }
         .navigationBarBackButtonHidden()
     }
 }
 
-//#Preview {
-//    @State var selectedTab = Tab.contacts
-//    return MainView(selectedTab: $selectedTab)
-//}
+#Preview {
+    MainView()
+}
