@@ -7,6 +7,57 @@
 
 import SwiftUI
 
+struct ContactRow: View {
+    var contact: Contact
+    
+    var body: some View {
+        HStack {
+            ZStack(alignment: .topTrailing) {
+                Image(systemName: contact.avatar)
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                
+                if contact.status == "online" {
+                    Circle()
+                        .fill(Color.green)
+                        .frame(width: 10, height: 10)
+                        .offset(x: 5, y: -5)
+                }
+            }
+            
+            VStack(alignment: .leading) {
+                Text("\(contact.firstName) \(contact.lastName ?? "")")
+                    .font(.headline)
+                
+                if contact.status == "online" {
+                    Text("Онлайн")
+                        .font(.subheadline)
+                        .foregroundColor(.green)
+                } else if let lastSeen = contact.lastSeen {
+                    Text(lastSeen)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+struct SearchBar: View {
+    @Binding var text: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+            TextField("Поиск", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+        }
+        .padding()
+    }
+}
+
 struct ContactsView: View {
     @Binding var selectedTab: Tab
     
@@ -14,13 +65,91 @@ struct ContactsView: View {
     @State private var selectedContact: Contact?
     @State private var navigationPath = NavigationPath()
     
-    let contacts: [Contact] = [
-        Contact(firstName: "Анастасия", lastName: "Иванова", phoneNumber: "+7 999 111-11-11", socialLinks: ["X": "https://x.com"], status: "offline", lastSeen: "Была вчера"),
-        Contact(firstName: "Петя", lastName: nil, phoneNumber: "+7 999 222-22-22", socialLinks: ["inst": "https://instagram.com"], status: "online", lastSeen: nil),
-        Contact(firstName: "Маман", lastName: nil, phoneNumber: "+7 999 333-33-33", socialLinks: ["linkedin": "https://linkedin.com"], status: "offline", lastSeen: "Была 3 часа назад"),
-        Contact(firstName: "Арбуз", lastName: "Дыня", phoneNumber: "+7 999 444-44-44", socialLinks: ["facebook": "https://facebook.com"], status: "online", lastSeen: nil),
-        Contact(firstName: "Иван", lastName: "Иванов", phoneNumber: "+7 999 555-55-55", socialLinks: ["X": "https://x.com"], status: "online", lastSeen: nil),
-        Contact(firstName: "Лиса", lastName: "Алиса", phoneNumber: "+7 999 666-66-66", socialLinks: ["inst": "https://instagram.com"], status: "offline", lastSeen: "Была 30 минут назад")
+    @State private var contacts: [Contact] = [
+        Contact(
+            firstName: "Анастасия",
+            lastName: "Иванова",
+            phoneNumber: "+7 999 111-11-11",
+            socialLinks: [
+                SocialLink(name: "X", url: "https://x.com", icon: "xmark.circle"),
+                SocialLink(name: "Instagram", url: "https://instagram.com", icon: "camera"),
+                SocialLink(name: "LinkedIn", url: "https://linkedin.com", icon: "link.circle"),
+                SocialLink(name: "Facebook", url: "https://facebook.com", icon: "f.circle")
+            ],
+            status: "offline",
+            lastSeen: "Была вчера",
+            avatar: "person.crop.circle.fill"
+        ),
+        Contact(
+            firstName: "Петя",
+            lastName: nil,
+            phoneNumber: "+7 999 222-22-22",
+            socialLinks: [
+                SocialLink(name: "X", url: "https://x.com", icon: "xmark.circle"),
+                SocialLink(name: "Instagram", url: "https://instagram.com", icon: "camera"),
+                SocialLink(name: "LinkedIn", url: "https://linkedin.com", icon: "link.circle"),
+                SocialLink(name: "Facebook", url: "https://facebook.com", icon: "f.circle")
+            ],
+            status: "online",
+            lastSeen: nil,
+            avatar: "person.crop.circle.fill"
+        ),
+        Contact(
+            firstName: "Маман",
+            lastName: nil,
+            phoneNumber: "+7 999 333-33-33",
+            socialLinks: [
+                SocialLink(name: "X", url: "https://x.com", icon: "xmark.circle"),
+                SocialLink(name: "Instagram", url: "https://instagram.com", icon: "camera"),
+                SocialLink(name: "LinkedIn", url: "https://linkedin.com", icon: "link.circle"),
+                SocialLink(name: "Facebook", url: "https://facebook.com", icon: "f.circle")
+            ],
+            status: "offline",
+            lastSeen: "Была 3 часа назад",
+            avatar: "person.crop.circle.fill"
+        ),
+        Contact(
+            firstName: "Арбуз",
+            lastName: "Дыня",
+            phoneNumber: "+7 999 444-44-44",
+            socialLinks: [
+                SocialLink(name: "X", url: "https://x.com", icon: "xmark.circle"),
+                SocialLink(name: "Instagram", url: "https://instagram.com", icon: "camera"),
+                SocialLink(name: "LinkedIn", url: "https://linkedin.com", icon: "link.circle"),
+                SocialLink(name: "Facebook", url: "https://facebook.com", icon: "f.circle")
+            ],
+            status: "online",
+            lastSeen: nil,
+            avatar: "person.crop.circle.fill"
+        ),
+        Contact(
+            firstName: "Иван",
+            lastName: "Иванов",
+            phoneNumber: "+7 999 555-55-55",
+            socialLinks: [
+                SocialLink(name: "X", url: "https://x.com", icon: "xmark.circle"),
+                SocialLink(name: "Instagram", url: "https://instagram.com", icon: "camera"),
+                SocialLink(name: "LinkedIn", url: "https://linkedin.com", icon: "link.circle"),
+                SocialLink(name: "Facebook", url: "https://facebook.com", icon: "f.circle")
+            ],
+            status: "online",
+            lastSeen: nil,
+            avatar: "person.crop.circle.fill"
+        ),
+        Contact(
+            firstName: "Лиса",
+            lastName: "Алиса",
+            phoneNumber: "+7 999 666-66-66",
+            socialLinks: [
+                SocialLink(name: "X", url: "https://x.com", icon: "xmark.circle"),
+                SocialLink(name: "Instagram", url: "https://instagram.com", icon: "camera"),
+                SocialLink(name: "LinkedIn", url: "https://linkedin.com", icon: "link.circle"),
+                SocialLink(name: "Facebook", url: "https://facebook.com", icon: "f.circle")
+            ],
+            status: "offline",
+            lastSeen: "Была 30 минут назад",
+            avatar: "person.crop.circle.fill"
+        )
     ]
     
     var body: some View {
@@ -37,7 +166,9 @@ struct ContactsView: View {
             }
             .navigationTitle("Контакты")
             .navigationDestination(for: Contact.self) { contact in
-                ContactDetailsView(navigationPath: $navigationPath, contact: contact)
+                if let index = contacts.firstIndex(where: { $0.id == contact.id }) {
+                    ContactDetailsView(navigationPath: $navigationPath, contact: $contacts[index])
+                }
             }
         }
     }
@@ -51,7 +182,6 @@ struct ContactsView: View {
     }
 }
 
-//#Preview {
-//    @State var selectedTab = Tab.contacts
-//    return ContactsView(selectedTab: $selectedTab)
-//}
+#Preview {
+    ContactsView(selectedTab: .constant(.contacts))
+}

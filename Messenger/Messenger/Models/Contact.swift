@@ -12,7 +12,15 @@ struct Contact: Identifiable, Hashable {
     var firstName: String
     var lastName: String?
     var phoneNumber: String
-    var socialLinks: [String: String]
+    var socialLinks: [SocialLink]
     var status: String
     var lastSeen: String?
+    var avatar: String
+}
+
+struct SocialLink: Identifiable, Hashable {
+    let id = UUID()
+    var name: String
+    var url: String
+    var icon: String
 }
