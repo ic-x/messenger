@@ -3,6 +3,16 @@
     {
       "filename" : "MoreIcon.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "MoreIcon 1.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

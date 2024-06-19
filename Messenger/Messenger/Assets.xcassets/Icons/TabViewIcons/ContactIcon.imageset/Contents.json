@@ -3,6 +3,16 @@
     {
       "filename" : "ContactIcon.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ContactIcon 1.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

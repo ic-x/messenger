@@ -137,7 +137,7 @@ struct ContactsView: View {
             return contacts
         } else {
             return contacts.filter { $0.firstName.contains(searchText) || ($0.lastName?.contains(searchText) ?? false) }
-        }
+        }   
     }
 }
 

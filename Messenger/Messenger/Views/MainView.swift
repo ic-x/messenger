@@ -14,19 +14,19 @@ struct MainView: View {
         TabView(selection: $selectedTab) {
             ContactsView()
                 .tabItem {
-                    Image(systemName: "person.2.fill")
+                    Image(selectedTab == .contacts ? "ActiveContactIcon" : "ContactIcon")
                 }
                 .tag(Tab.contacts)
             
             ChatsView()
                 .tabItem {
-                    Image(systemName: "message.fill")
+                    Image(selectedTab == .chats ? "ActiveChatsIcon" : "ChatsIcon")
                 }
                 .tag(Tab.chats)
             
             MoreView()
                 .tabItem {
-                    Image(systemName: "ellipsis.circle.fill")
+                    Image(selectedTab == .more ? "ActiveMoreIcon" : "MoreIcon")
                 }
                 .tag(Tab.more)
         }

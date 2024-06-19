@@ -3,6 +3,16 @@
     {
       "filename" : "EditIcon.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "EditIcon 1.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
