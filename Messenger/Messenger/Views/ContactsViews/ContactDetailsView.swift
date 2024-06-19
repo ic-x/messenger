@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct ContactRow: View {
     var contact: Contact
@@ -64,26 +65,6 @@ struct ContactDetailsView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Button(action: {
-                    if !navigationPath.isEmpty {
-                        navigationPath.removeLast()
-                    }
-                }) {
-                    Image(systemName: "chevron.left")
-                        .padding()
-                }
-                Spacer()
-                Text("Профиль")
-                    .font(.headline)
-                Spacer()
-                Button(action: {
-                }) {
-                    Image(systemName: "pencil")
-                        .padding()
-                }
-            }
-            
             Image(systemName: "person.crop.circle.fill")
                 .resizable()
                 .frame(width: 100, height: 100)
@@ -111,11 +92,31 @@ struct ContactDetailsView: View {
             
             Spacer()
         }
-        .navigationBarBackButtonHidden(true)
         .padding()
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarLeading) {
+                Button(action: {
+                    if !navigationPath.isEmpty {
+                        navigationPath.removeLast()
+                    }
+                }) {
+                    Image("ChevronLeft")
+                }
+                Text("Профиль")
+                    .font(.Typography.Subheading.sub1)
+                    .lineSpacing(30)
+                    .foregroundStyle(.text)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    logMessage("Редактировать")
+                }) {
+                    Image("ChevronRight")
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
-    
-    
     
     func icon(for socialMedia: String) -> String {
         switch socialMedia {
@@ -133,6 +134,7 @@ struct ContactDetailsView: View {
     }
 }
 
-//#Preview {
-//    ContactDetailsView()
-//}
+#Preview {
+    let contact = Contact(firstName: "Анастасия", lastName: "Иванова", phoneNumber: "+7 999 111-11-11", socialLinks: ["X": "https://x.com"], status: "offline", lastSeen: "Была вчера")
+    return ContactDetailsView(navigationPath: .constant(NavigationPath()), contact: contact)
+}

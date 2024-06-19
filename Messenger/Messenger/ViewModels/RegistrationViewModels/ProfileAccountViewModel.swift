@@ -28,11 +28,10 @@ class ProfileAccountViewModel: ObservableObject {
         let newUser = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
         do {
             try newUser.saveToUserDefaults()
-            os_log("%@", log: log, type: .info, String(describing: newUser))
+            logMessage(String(describing: newUser))
         } catch {
             errorMessage = error.localizedDescription
-            print(errorMessage ?? "Error")
-            os_log("%@", log: log, type: .error, errorMessage ?? "Error")
+            logMessage(errorMessage ?? "Error")
         }
     }
     
