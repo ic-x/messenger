@@ -32,7 +32,6 @@
 		173A7AF32C1A52150019C33D /* ProfileAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A7AF22C1A52150019C33D /* ProfileAccountView.swift */; };
 		17439D872C21C5EE0023751E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D862C21C5EE0023751E /* Contact.swift */; };
 		17439D902C21CD010023751E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D8F2C21CD010023751E /* Logger.swift */; };
-		17439D942C21D3170023751E /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D932C21D3170023751E /* ContactDetailsView.swift */; };
 		1799396D2C1CBD57000711E5 /* SF-Pro-Display-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1799395B2C1CBD55000711E5 /* SF-Pro-Display-UltralightItalic.otf */; };
 		179AA86D2C1CD43A0005B5D7 /* Font+Typography.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */; };
 		17B20CE32C1CCE64004DC637 /* SF-Pro-Display-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CD12C1CCE62004DC637 /* SF-Pro-Display-ThinItalic.otf */; };
@@ -52,7 +51,9 @@
 		17B20CF22C1CCE64004DC637 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CE02C1CCE64004DC637 /* SF-Pro-Display-Semibold.otf */; };
 		17B20CF32C1CCE64004DC637 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CE12C1CCE64004DC637 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		17B20CF42C1CCE64004DC637 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CE22C1CCE64004DC637 /* SF-Pro-Display-Thin.otf */; };
+		17B56B572C2224D100B21EC6 /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B56B562C2224D100B21EC6 /* ContactDetailsView.swift */; };
 		17EC8E342C1DCE9900B01E36 /* CodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */; };
+		17ECD69E2C22E84200485B5A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ECD69D2C22E84200485B5A /* AppState.swift */; };
 		17F74EE72C1AF36700EAF107 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EE62C1AF36700EAF107 /* Country.swift */; };
 		17F74EE92C1AF37600EAF107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EE82C1AF37600EAF107 /* User.swift */; };
 		17F74EEB2C1AF38400EAF107 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */; };
@@ -108,7 +109,6 @@
 		173A7AF22C1A52150019C33D /* ProfileAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountView.swift; sourceTree = "<group>"; };
 		17439D862C21C5EE0023751E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		17439D8F2C21CD010023751E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		17439D932C21D3170023751E /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
 		1799395B2C1CBD55000711E5 /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
 		1799397F2C1CBD71000711E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Typography.swift.swift"; sourceTree = "<group>"; };
@@ -129,7 +129,9 @@
 		17B20CE02C1CCE64004DC637 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		17B20CE12C1CCE64004DC637 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		17B20CE22C1CCE64004DC637 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		17B56B562C2224D100B21EC6 /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
 		17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDigitView.swift; sourceTree = "<group>"; };
+		17ECD69D2C22E84200485B5A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		17F74EE62C1AF36700EAF107 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17F74EE82C1AF37600EAF107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
@@ -245,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				1730B3AA2C2062F80014F1BF /* ContactsView.swift */,
-				17439D932C21D3170023751E /* ContactDetailsView.swift */,
+				17B56B562C2224D100B21EC6 /* ContactDetailsView.swift */,
 			);
 			path = ContactsViews;
 			sourceTree = "<group>";
@@ -321,6 +323,7 @@
 		17F74EE42C1AF28B00EAF107 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				17ECD69D2C22E84200485B5A /* AppState.swift */,
 				17323EA52C1A0A6F0081F08A /* ContentView.swift */,
 				17439D882C21C86C0023751E /* RegistrationViews */,
 				1730B3A42C2062930014F1BF /* MainView.swift */,
@@ -497,9 +500,10 @@
 				17323ED42C1A0BB70081F08A /* VerificationPhoneView.swift in Sources */,
 				17323EA42C1A0A6F0081F08A /* MessengerApp.swift in Sources */,
 				17439D872C21C5EE0023751E /* Contact.swift in Sources */,
-				17439D942C21D3170023751E /* ContactDetailsView.swift in Sources */,
+				17B56B572C2224D100B21EC6 /* ContactDetailsView.swift in Sources */,
 				17323ECE2C1A0B270081F08A /* WalkthroughView.swift in Sources */,
 				179AA86D2C1CD43A0005B5D7 /* Font+Typography.swift.swift in Sources */,
+				17ECD69E2C22E84200485B5A /* AppState.swift in Sources */,
 				17F74EEB2C1AF38400EAF107 /* NavigationItem.swift in Sources */,
 				17F74EFD2C1AF43400EAF107 /* WalkthroughViewModel.swift in Sources */,
 				17323ED02C1A0B5C0081F08A /* PrivacyPolicyView.swift in Sources */,

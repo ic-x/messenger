@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct MoreView: View {
+    @Binding var selectedTab: Tab
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Дополнительные опции")
-            }
+        VStack {
+            Text("Дополнительные опции")
         }
     }
 }
 
 #Preview {
-    MoreView()
+    @State var selectedTab = Tab.more
+    return MoreView(selectedTab: $selectedTab)
 }

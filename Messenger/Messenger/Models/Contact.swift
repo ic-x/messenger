@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct Contact: Identifiable {
+struct Contact: Identifiable, Hashable {
     let id = UUID()
     var firstName: String
     var lastName: String?
     var phoneNumber: String
     var socialLinks: [String: String]
+    var status: String
+    var lastSeen: String?
 }

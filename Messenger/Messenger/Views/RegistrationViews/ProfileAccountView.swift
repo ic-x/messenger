@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileAccountView: View {
+    @EnvironmentObject var appState: AppState
     @Binding var navigationPath: NavigationPath
     @ObservedObject var viewModel: ProfileAccountViewModel
     
@@ -49,7 +50,7 @@ struct ProfileAccountView: View {
             Button(action: {
                 viewModel.saveUser()
                 navigationPath.removeLast(navigationPath.count)
-                navigationPath.append(NavigationItem.mainView)
+                appState.registerUser()
             }) {
                 Text("Сохранить")
                     .font(.Typography.Subheading.sub2)
