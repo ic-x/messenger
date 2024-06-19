@@ -249,8 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				1730B3AA2C2062F80014F1BF /* ContactsView.swift */,
-				17B56B562C2224D100B21EC6 /* ContactDetailsView.swift */,
 				17F727C82C232FF000B304C4 /* ContactRowView.swift */,
+				17B56B562C2224D100B21EC6 /* ContactDetailsView.swift */,
 			);
 			path = ContactsViews;
 			sourceTree = "<group>";

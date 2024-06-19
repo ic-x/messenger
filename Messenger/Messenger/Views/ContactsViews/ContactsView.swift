@@ -118,16 +118,20 @@ struct ContactsView: View {
                     .ignoresSafeArea()
                 VStack {
                     HStack {
-                        Image(systemName: "magnifyingglass")
-                        TextField("Поиск", text: $searchText)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.Typography.Body.body1)
-                            .foregroundStyle(.brandPlaceholder)
-                            .background(Color(.inputField))
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(.inputField)
+                            .frame(height: 36)
+                            .overlay(
+                                HStack {
+                                    Image(.searchIcon)
+                                    TextField("Поиск", text: $searchText)
+                                        .font(.Typography.Body.body1)
+                                }
+                                .padding(.horizontal, 10)
+                            )
                     }
-                    .padding(.leading, 25)
-                    .padding(.top, 30)
+                    .padding(.leading)
+                    .padding(.top, 23)
                     
                     List {
                         ForEach(filteredContacts) { contact in
@@ -146,8 +150,8 @@ struct ContactsView: View {
                         }
                     }
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                .padding(.leading, 5)
+                .padding(.trailing, 30)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarLeading) {
                         Text("Контакты")

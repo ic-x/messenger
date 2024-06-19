@@ -17,31 +17,37 @@ struct ContactRowView: View {
             HStack {
                 ZStack(alignment: .topTrailing) {
                     ZStack(alignment: .center) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(LinearGradient(gradient: Gradient(colors: contact.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 3)
-                            .frame(width: 50, height: 50)
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(LinearGradient(gradient: Gradient(colors: contact.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2)
+                            .frame(width: 56, height: 56)
                             .opacity(contact.hasStories ? 1 : 0)
                         
                         if let avatar = contact.avatar {
                             Image(avatar)
                                 .resizable()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
+                                .frame(width: 48, height: 48)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
                         } else {
                             Text(initials(from: contact))
                                 .font(.headline)
                                 .foregroundColor(.white)
-                                .frame(width: 40, height: 40)
+                                .frame(width: 48, height: 48)
                                 .background(Color.purple)
-                                .clipShape(Circle())
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                     }
                     .background(Color.brandBackground)
                     
                     if contact.status == "online" {
                         Circle()
-                            .fill(Color.green)
-                            .frame(width: 12, height: 12)
+                            .fill(Color.white)
+                            .frame(width: 16, height: 16)
+                            .overlay(
+                                Circle()
+                                    .fill(Color.green)
+                                    .frame(width: 12, height: 12)
+                            )
+                            .offset(x: -1, y: 1)
                     }
                 }
                 .background(Color.brandBackground)
