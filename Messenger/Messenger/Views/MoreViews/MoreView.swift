@@ -9,8 +9,12 @@ import SwiftUI
 
 struct MoreView: View {
     var body: some View {
-        VStack {
-            Text("Дополнительные опции")
+        ZStack {
+            Color.brandBackground
+                .ignoresSafeArea()
+            VStack {
+                Text("Дополнительные опции")
+            }
         }
     }
 }

@@ -55,7 +55,6 @@
 		17EC8E342C1DCE9900B01E36 /* CodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */; };
 		17ECD69E2C22E84200485B5A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ECD69D2C22E84200485B5A /* AppState.swift */; };
 		17F727C92C232FF000B304C4 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F727C82C232FF000B304C4 /* ContactRowView.swift */; };
-		17F727CB2C23300600B304C4 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F727CA2C23300600B304C4 /* SearchBarView.swift */; };
 		17F74EE72C1AF36700EAF107 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EE62C1AF36700EAF107 /* Country.swift */; };
 		17F74EE92C1AF37600EAF107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EE82C1AF37600EAF107 /* User.swift */; };
 		17F74EEB2C1AF38400EAF107 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */; };
@@ -135,7 +134,6 @@
 		17EC8E332C1DCE9900B01E36 /* CodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDigitView.swift; sourceTree = "<group>"; };
 		17ECD69D2C22E84200485B5A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		17F727C82C232FF000B304C4 /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
-		17F727CA2C23300600B304C4 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		17F74EE62C1AF36700EAF107 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17F74EE82C1AF37600EAF107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17F74EEA2C1AF38400EAF107 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				1730B3AA2C2062F80014F1BF /* ContactsView.swift */,
 				17B56B562C2224D100B21EC6 /* ContactDetailsView.swift */,
 				17F727C82C232FF000B304C4 /* ContactRowView.swift */,
-				17F727CA2C23300600B304C4 /* SearchBarView.swift */,
 			);
 			path = ContactsViews;
 			sourceTree = "<group>";
@@ -503,7 +500,6 @@
 				1726188A2C1B31AA008DD3A0 /* CountryPickerViewModel.swift in Sources */,
 				17439D902C21CD010023751E /* Logger.swift in Sources */,
 				17323EA62C1A0A6F0081F08A /* ContentView.swift in Sources */,
-				17F727CB2C23300600B304C4 /* SearchBarView.swift in Sources */,
 				17323ED42C1A0BB70081F08A /* VerificationPhoneView.swift in Sources */,
 				17323EA42C1A0A6F0081F08A /* MessengerApp.swift in Sources */,
 				17439D872C21C5EE0023751E /* Contact.swift in Sources */,

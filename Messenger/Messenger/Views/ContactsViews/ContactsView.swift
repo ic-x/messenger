@@ -108,45 +108,67 @@ struct ContactsView: View {
             avatar: nil,
             hasStories: true,
             gradientColors: [Color.variant2Color1, Color.variant2Color2]
-        )
+        ),
     ]
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            List {
-                SearchBarView(text: $searchText)
-        
-                ForEach(filteredContacts) { contact in
-                    ContactRowView(contact: contact)
-                        .onTapGesture {
-                            navigationPath.append(contact)
+            ZStack {
+                Color.brandBackground
+                    .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                        TextField("Поиск", text: $searchText)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.Typography.Body.body1)
+                            .foregroundStyle(.brandPlaceholder)
+                            .background(Color(.inputField))
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }
+                    .padding(.leading, 25)
+                    .padding(.top, 30)
+                    
+                    List {
+                        ForEach(filteredContacts) { contact in
+                            ContactRowView(contact: contact)
+                                .onTapGesture {
+                                    navigationPath.append(contact)
+                                }
                         }
-                }
-            }
-            .navigationDestination(for: Contact.self) { contact in
-                if let index = contacts.firstIndex(where: { $0.id == contact.id }) {
-                    ContactDetailsView(navigationPath: $navigationPath, contact: $contacts[index])
-                }
-            }
-            .padding()
-            .toolbar {
-                ToolbarItemGroup(placement: .topBarLeading) {
-                    Text("Контакты")
-                        .font(.Typography.Subheading.sub1)
-                        .lineSpacing(30)
-                        .foregroundStyle(.text)
-                }
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        logMessage("Новый контакт")
-                    }) {
-                        Image("NewContactIcon")
+                        .listRowBackground(Color.brandBackground)
+                    }
+                    .listStyle(PlainListStyle())
+                    .background(Color.brandBackground)
+                    .navigationDestination(for: Contact.self) { contact in
+                        if let index = contacts.firstIndex(where: { $0.id == contact.id }) {
+                            ContactDetailsView(navigationPath: $navigationPath, contact: $contacts[index])
+                        }
                     }
                 }
+                .padding(.leading)
+                .padding(.trailing)
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Text("Контакты")
+                            .font(.Typography.Subheading.sub1)
+                            .lineSpacing(30)
+                            .foregroundStyle(.text)
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            logMessage("Новый контакт")
+                        }) {
+                            Image("NewContactIcon")
+                        }
+                    }
+                }
+                .navigationBarBackButtonHidden(true)
             }
-            .navigationBarBackButtonHidden(true)
+            .background(Color.brandBackground)
         }
+        .background(Color.brandBackground)
     }
     
     var filteredContacts: [Contact] {
@@ -154,7 +176,7 @@ struct ContactsView: View {
             return contacts
         } else {
             return contacts.filter { $0.firstName.contains(searchText) || ($0.lastName?.contains(searchText) ?? false) }
-        }   
+        }
     }
 }
 

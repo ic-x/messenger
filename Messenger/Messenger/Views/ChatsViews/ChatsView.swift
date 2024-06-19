@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ChatsView: View {
     var body: some View {
-        VStack {
-            Text("Список чатов")
+        ZStack {
+            Color.brandBackground
+                .ignoresSafeArea()
+            VStack {
+                Text("Список чатов")
+            }
         }
     }
 }

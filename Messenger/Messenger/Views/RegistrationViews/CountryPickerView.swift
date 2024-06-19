@@ -15,51 +15,60 @@ struct CountryPickerView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                HStack {
-                    TextField("Поиск страны", text: $searchText)
-                        .font(.Typography.Body.body1)
-                        .padding()
-                        .foregroundStyle(.brandPlaceholder)
-                        .background(Color(.inputField))
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                }
-                .padding()
-                
-                List(viewModel.filteredCountries) { country in
-                    Button(action: {
-                        selectedCountry = country
-                        isPresented = false
-                    }) {
-                        HStack {
-                            Image(country.flagImageName)
-                                .resizable()
-                                .frame(width: 18, height: 12)
-                            
-                            Text(country.name)
-                                .font(.Typography.Body.body2)
-                            
-                            Spacer()
-                            
-                            Text(country.code)
-                                .font(.Typography.Body.body1)
+            ZStack {
+                Color.brandBackground
+                    .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        TextField("Поиск страны", text: $searchText)
+                            .font(.Typography.Body.body1)
+                            .padding()
+                            .foregroundStyle(.brandPlaceholder)
+                            .background(Color(.inputField))
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }
+                    .padding()
+                    
+                    List(viewModel.filteredCountries) { country in
+                        Button(action: {
+                            selectedCountry = country
+                            isPresented = false
+                        }) {
+                            HStack {
+                                Image(country.flagImageName)
+                                    .resizable()
+                                    .frame(width: 18, height: 12)
+                                
+                                Text(country.name)
+                                    .font(.Typography.Body.body2)
+                                
+                                Spacer()
+                                
+                                Text(country.code)
+                                    .font(.Typography.Body.body1)
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
                         }
+                        .listRowBackground(Color.brandBackground)
                     }
+                    .background(Color.brandBackground)
+                    .listStyle(PlainListStyle())
+                    .foregroundStyle(.text)
                 }
-                .foregroundStyle(.text)
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Text("Выберите страну")
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Text("Выберите страну")
+                            .font(.Typography.Subheading.sub1)
+                            .foregroundStyle(.text)
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Отмена") {
+                            isPresented = false
+                        }
                         .font(.Typography.Subheading.sub1)
-                        .foregroundStyle(.text)
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Отмена") {
-                        isPresented = false
+                        .foregroundStyle(.textButton)
                     }
-                    .font(.Typography.Subheading.sub1)
-                    .foregroundStyle(.textButton)
                 }
             }
         }
