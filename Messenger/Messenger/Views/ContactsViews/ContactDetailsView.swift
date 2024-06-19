@@ -14,10 +14,11 @@ struct ContactDetailsView: View {
     var body: some View {
         VStack {
             if let avatar = contact.avatar {
-                Image(systemName: avatar)
+                Image(avatar)
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 150, height: 150)
                     .padding()
+                    .padding(.top)
             } else {
                 Text(initials(from: contact))
                     .font(.largeTitle)
@@ -26,22 +27,32 @@ struct ContactDetailsView: View {
                     .background(Color.purple)
                     .clipShape(Circle())
                     .padding()
+                    .padding(.top)
             }
             
             Text("\(contact.firstName) \(contact.lastName ?? "")")
-                .font(.largeTitle)
+                .font(.Typography.Heading.h2)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.text)
             
             Text(contact.phoneNumber)
-                .font(.title2)
-                .padding(.top)
+                .font(.Typography.Other.phone)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.phoneNumber)
+                .padding(.bottom, 30)
             
             HStack {
                 ForEach(contact.socialLinks) { link in
                     Link(destination: URL(string: link.url)!) {
-                        Image(systemName: link.icon)
+                        Image(link.icon)
                             .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
+                            .scaledToFit()
+                            .padding(12)
+                            .frame(width: 71.67, height: 40)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.purple, lineWidth: 2)
+                            )
                     }
                 }
             }
@@ -56,16 +67,18 @@ struct ContactDetailsView: View {
                         navigationPath.removeLast()
                     }
                 }) {
-                    Image(systemName: "chevron.left")
+                    Image("ChevronLeft")
                 }
                 Text("Профиль")
-                    .font(.subheadline)
+                    .font(.Typography.Subheading.sub1)
+                    .lineSpacing(30)
+                    .foregroundStyle(.text)
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    print("Редактировать")
+                    logMessage("Редактировать")
                 }) {
-                    Image(systemName: "pencil")
+                    Image("EditIcon")
                 }
             }
         }

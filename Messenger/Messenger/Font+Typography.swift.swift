@@ -29,5 +29,9 @@ extension Font {
             static let metadata2 = Font.custom("SFProDisplay-Regular", size: 10)
             static let metadata3 = Font.custom("SFProDisplay-SemiBold", size: 10)
         }
+        
+        struct Other {
+            static let phone = Font.custom("SFProDisplay-Regular", size: 16)
+        }
     }
 }

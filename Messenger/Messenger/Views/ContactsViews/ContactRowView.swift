@@ -20,7 +20,7 @@ struct ContactRowView: View {
                         .opacity(contact.hasStories ? 1 : 0)
                     
                     if let avatar = contact.avatar {
-                        Image(systemName: avatar)
+                        Image(avatar)
                             .resizable()
                             .frame(width: 40, height: 40)
                             .clipShape(Circle())
