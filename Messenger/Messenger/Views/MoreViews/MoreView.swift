@@ -14,6 +14,9 @@ struct MoreView: View {
                 .ignoresSafeArea()
             VStack {
                 Text("Дополнительные опции")
+                    .font(.Typography.Subheading.sub2)
+                    .lineSpacing(28)
+                    .multilineTextAlignment(.center)
             }
         }
     }

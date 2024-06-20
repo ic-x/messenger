@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContactRowView: View {
-    var contact: Contact
+    @StateObject var viewModel: ContactRowViewModel
+    
+    init(contact: Contact) {
+        _viewModel = StateObject(wrappedValue: ContactRowViewModel(contact: contact))
+    }
     
     var body: some View {
         ZStack {
@@ -18,69 +22,59 @@ struct ContactRowView: View {
                 ZStack(alignment: .topTrailing) {
                     ZStack(alignment: .center) {
                         RoundedRectangle(cornerRadius: 16)
-                            .stroke(LinearGradient(gradient: Gradient(colors: contact.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2)
+                            .stroke(LinearGradient(gradient: Gradient(colors: viewModel.contact.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2)
                             .frame(width: 56, height: 56)
-                            .opacity(contact.hasStories ? 1 : 0)
+                            .opacity(viewModel.contact.hasStories ? 1 : 0)
                         
-                        if let avatar = contact.avatar {
+                        if let avatar = viewModel.contact.avatar {
                             Image(avatar)
                                 .resizable()
                                 .frame(width: 48, height: 48)
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
                         } else {
-                            Text(initials(from: contact))
+                            Text(viewModel.initials)
                                 .font(.headline)
-                                .foregroundColor(.white)
+                                .foregroundStyle(.white)
                                 .frame(width: 48, height: 48)
-                                .background(Color.purple)
+                                .background(.purple)
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                     }
-                    .background(Color.brandBackground)
+                    .background(.brandBackground)
                     
-                    if contact.status == "online" {
+                    if viewModel.contact.status == "online" {
                         Circle()
-                            .fill(Color.white)
+                            .fill(.white)
                             .frame(width: 16, height: 16)
                             .overlay(
                                 Circle()
-                                    .fill(Color.green)
+                                    .fill(.success)
                                     .frame(width: 12, height: 12)
                             )
                             .offset(x: -1, y: 1)
                     }
                 }
-                .background(Color.brandBackground)
+                .background(.brandBackground)
                 
                 VStack(alignment: .leading) {
-                    Text("\(contact.firstName) \(contact.lastName ?? "")")
+                    Text("\(viewModel.contact.firstName) \(viewModel.contact.lastName ?? "")")
                         .font(.headline)
                     
-                    if contact.status == "online" {
+                    if viewModel.contact.status == "online" {
                         Text("Онлайн")
                             .font(.subheadline)
-                            .foregroundColor(.green)
-                    } else if let lastSeen = contact.lastSeen {
+                            .foregroundStyle(.success)
+                    } else if let lastSeen = viewModel.contact.lastSeen {
                         Text(lastSeen)
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                     }
                 }
-                .background(Color.brandBackground)
+                .background(.brandBackground)
                 
                 Spacer()
             }
-            .background(Color.brandBackground)
-        }
-    }
-    
-    private func initials(from contact: Contact) -> String {
-        let firstInitial = contact.firstName.first ?? "?"
-        if let lastName = contact.lastName {
-            let lastInitial = lastName.first ?? "?"
-            return "\(firstInitial)\(lastInitial)"
-        } else {
-            return "\(firstInitial)"
+            .background(.brandBackground)
         }
     }
 }
@@ -100,7 +94,7 @@ struct ContactRowView: View {
         lastSeen: nil,
         avatar: nil,
         hasStories: true,
-        gradientColors: [Color.green, Color.blue]
+        gradientColors: [.success, .blue]
     )
     return ContactRowView(contact: contact)
 }

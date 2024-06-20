@@ -14,6 +14,9 @@ struct ChatsView: View {
                 .ignoresSafeArea()
             VStack {
                 Text("Список чатов")
+                    .font(.Typography.Subheading.sub2)
+                    .lineSpacing(28)
+                    .multilineTextAlignment(.center)
             }
         }
     }

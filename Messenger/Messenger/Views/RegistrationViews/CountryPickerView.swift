@@ -24,7 +24,7 @@ struct CountryPickerView: View {
                             .font(.Typography.Body.body1)
                             .padding()
                             .foregroundStyle(.brandPlaceholder)
-                            .background(Color(.inputField))
+                            .background(.inputField)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                     }
                     .padding()
@@ -52,7 +52,7 @@ struct CountryPickerView: View {
                         }
                         .listRowBackground(Color.brandBackground)
                     }
-                    .background(Color.brandBackground)
+                    .background(.brandBackground)
                     .listStyle(PlainListStyle())
                     .foregroundStyle(.text)
                 }

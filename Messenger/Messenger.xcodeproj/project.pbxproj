@@ -34,6 +34,9 @@
 		17439D902C21CD010023751E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17439D8F2C21CD010023751E /* Logger.swift */; };
 		1799396D2C1CBD57000711E5 /* SF-Pro-Display-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1799395B2C1CBD55000711E5 /* SF-Pro-Display-UltralightItalic.otf */; };
 		179AA86D2C1CD43A0005B5D7 /* Font+Typography.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */; };
+		179C04312C23ABD300766E88 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C04302C23ABD300766E88 /* ContactsViewModel.swift */; };
+		179C04332C23ABE700766E88 /* ContactRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C04322C23ABE700766E88 /* ContactRowViewModel.swift */; };
+		179C04352C23ABF900766E88 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C04342C23ABF900766E88 /* ContactDetailsViewModel.swift */; };
 		17B20CE32C1CCE64004DC637 /* SF-Pro-Display-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CD12C1CCE62004DC637 /* SF-Pro-Display-ThinItalic.otf */; };
 		17B20CE42C1CCE64004DC637 /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CD22C1CCE62004DC637 /* SF-Pro-Display-Ultralight.otf */; };
 		17B20CE62C1CCE64004DC637 /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B20CD42C1CCE63004DC637 /* SF-Pro-Display-Black.otf */; };
@@ -113,6 +116,9 @@
 		1799395B2C1CBD55000711E5 /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
 		1799397F2C1CBD71000711E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		179AA86C2C1CD43A0005B5D7 /* Font+Typography.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Typography.swift.swift"; sourceTree = "<group>"; };
+		179C04302C23ABD300766E88 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		179C04322C23ABE700766E88 /* ContactRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowViewModel.swift; sourceTree = "<group>"; };
+		179C04342C23ABF900766E88 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 		17B20CD12C1CCE62004DC637 /* SF-Pro-Display-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-ThinItalic.otf"; sourceTree = "<group>"; };
 		17B20CD22C1CCE62004DC637 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		17B20CD42C1CCE63004DC637 /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 			children = (
 				1799397F2C1CBD71000711E5 /* Info.plist */,
 				17323EA32C1A0A6F0081F08A /* MessengerApp.swift */,
+				17ECD69D2C22E84200485B5A /* AppState.swift */,
 				17F74EE32C1AF27D00EAF107 /* Models */,
 				17F74EE52C1AF29B00EAF107 /* ViewModels */,
 				17F74EE42C1AF28B00EAF107 /* Views */,
@@ -285,6 +292,16 @@
 			path = RegistrationViewModels;
 			sourceTree = "<group>";
 		};
+		179C042F2C23AAF500766E88 /* ContactsViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				179C04302C23ABD300766E88 /* ContactsViewModel.swift */,
+				179C04322C23ABE700766E88 /* ContactRowViewModel.swift */,
+				179C04342C23ABF900766E88 /* ContactDetailsViewModel.swift */,
+			);
+			path = ContactsViewModels;
+			sourceTree = "<group>";
+		};
 		17B20CD02C1CCDB6004DC637 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +343,6 @@
 		17F74EE42C1AF28B00EAF107 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				17ECD69D2C22E84200485B5A /* AppState.swift */,
 				17323EA52C1A0A6F0081F08A /* ContentView.swift */,
 				17439D882C21C86C0023751E /* RegistrationViews */,
 				1730B3A42C2062930014F1BF /* MainView.swift */,
@@ -341,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				17439D8E2C21C9920023751E /* RegistrationViewModels */,
+				179C042F2C23AAF500766E88 /* ContactsViewModels */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -516,6 +533,7 @@
 				17F74EE72C1AF36700EAF107 /* Country.swift in Sources */,
 				17F74F012C1AF44C00EAF107 /* VerificationCodeViewModel.swift in Sources */,
 				17F74F032C1AF45800EAF107 /* ProfileAccountViewModel.swift in Sources */,
+				179C04332C23ABE700766E88 /* ContactRowViewModel.swift in Sources */,
 				173A7AF32C1A52150019C33D /* ProfileAccountView.swift in Sources */,
 				17EC8E342C1DCE9900B01E36 /* CodeDigitView.swift in Sources */,
 				17F74EFF2C1AF44100EAF107 /* VerificationPhoneViewModel.swift in Sources */,
@@ -523,8 +541,10 @@
 				1730B3A72C2062C90014F1BF /* ChatsView.swift in Sources */,
 				1730B3AB2C2062F80014F1BF /* ContactsView.swift in Sources */,
 				1730B3AD2C207E940014F1BF /* Tab.swift in Sources */,
+				179C04312C23ABD300766E88 /* ContactsViewModel.swift in Sources */,
 				17F74EE92C1AF37600EAF107 /* User.swift in Sources */,
 				172618822C1B2D21008DD3A0 /* PrivacyPolicyViewModel.swift in Sources */,
+				179C04352C23ABF900766E88 /* ContactDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
