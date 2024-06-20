@@ -10,7 +10,7 @@
 		7A49884C2C80AB7300F120E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A49884B2C80AB7300F120E8 /* Preview Assets.xcassets */; };
 		7A4988832C80AB9000F120E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4988522C80AB8F00F120E8 /* Assets.xcassets */; };
 		7A4988842C80AB9000F120E8 /* MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4988532C80AB8F00F120E8 /* MessengerApp.swift */; };
-		7A4988852C80AB9000F120E8 /* Font+Typography.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4988542C80AB9000F120E8 /* Font+Typography.swift.swift */; };
+		7A4988852C80AB9000F120E8 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4988542C80AB9000F120E8 /* Font+.swift */; };
 		7A4988862C80AB9000F120E8 /* ContactDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4988552C80AB9000F120E8 /* ContactDetailsViewModel.swift */; };
 		7A4988872C80AB9000F120E8 /* ContactRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4988562C80AB9000F120E8 /* ContactRowViewModel.swift */; };
 		7A4988882C80AB9000F120E8 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4988572C80AB9000F120E8 /* ContactsViewModel.swift */; };
@@ -54,7 +54,7 @@
 		7A49884B2C80AB7300F120E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A4988522C80AB8F00F120E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A4988532C80AB8F00F120E8 /* MessengerApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerApp.swift; sourceTree = "<group>"; };
-		7A4988542C80AB9000F120E8 /* Font+Typography.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Typography.swift.swift"; sourceTree = "<group>"; };
+		7A4988542C80AB9000F120E8 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		7A4988552C80AB9000F120E8 /* ContactDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModel.swift; sourceTree = "<group>"; };
 		7A4988562C80AB9000F120E8 /* ContactRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRowViewModel.swift; sourceTree = "<group>"; };
 		7A4988572C80AB9000F120E8 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				7A4988AA2C80ABC700F120E8 /* Info.plist */,
 				7A4988662C80AB9000F120E8 /* AppState.swift */,
 				7A4988522C80AB8F00F120E8 /* Assets.xcassets */,
-				7A4988542C80AB9000F120E8 /* Font+Typography.swift.swift */,
+				7A4988542C80AB9000F120E8 /* Font+.swift */,
 				7A4988652C80AB9000F120E8 /* Fonts */,
 				7A49887B2C80AB9000F120E8 /* Logger.swift */,
 				7A4988532C80AB8F00F120E8 /* MessengerApp.swift */,
@@ -342,7 +342,7 @@
 				7A4988882C80AB9000F120E8 /* ContactsViewModel.swift in Sources */,
 				7A49889E2C80AB9000F120E8 /* VerificationCodeView.swift in Sources */,
 				7A4988A02C80AB9000F120E8 /* WalkthroughView.swift in Sources */,
-				7A4988852C80AB9000F120E8 /* Font+Typography.swift.swift in Sources */,
+				7A4988852C80AB9000F120E8 /* Font+.swift in Sources */,
 				7A49888F2C80AB9000F120E8 /* WalkthroughViewModel.swift in Sources */,
 				7A4988A92C80AB9000F120E8 /* User.swift in Sources */,
 				7A4988A42C80AB9000F120E8 /* Contact.swift in Sources */,
