@@ -16,7 +16,7 @@ class AppState: ObservableObject {
     }
     
     func checkRegistrationStatus() {
-        isRegistered = false
+        isRegistered = true
         currentView = isRegistered ? .main : .walkthrough
     }
     
