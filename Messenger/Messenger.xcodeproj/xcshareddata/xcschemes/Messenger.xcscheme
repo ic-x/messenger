@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17323E9F2C1A0A6F0081F08A"
+               BlueprintIdentifier = "7A4988402C80AB7200F120E8"
                BuildableName = "Messenger.app"
                BlueprintName = "Messenger"
                ReferencedContainer = "container:Messenger.xcodeproj">
@@ -29,30 +29,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17323EAF2C1A0A710081F08A"
-               BuildableName = "MessengerTests.xctest"
-               BlueprintName = "MessengerTests"
-               ReferencedContainer = "container:Messenger.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17323EB92C1A0A710081F08A"
-               BuildableName = "MessengerUITests.xctest"
-               BlueprintName = "MessengerUITests"
-               ReferencedContainer = "container:Messenger.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -68,12 +44,19 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17323E9F2C1A0A6F0081F08A"
+            BlueprintIdentifier = "7A4988402C80AB7200F120E8"
             BuildableName = "Messenger.app"
             BlueprintName = "Messenger"
             ReferencedContainer = "container:Messenger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "IDEPreferLogStreaming"
+            value = "YES"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -85,7 +68,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17323E9F2C1A0A6F0081F08A"
+            BlueprintIdentifier = "7A4988402C80AB7200F120E8"
             BuildableName = "Messenger.app"
             BlueprintName = "Messenger"
             ReferencedContainer = "container:Messenger.xcodeproj">

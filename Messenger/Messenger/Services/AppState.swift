@@ -9,14 +9,13 @@ import SwiftUI
 
 class AppState: ObservableObject {
     @Published var currentView: AppView = .walkthrough
-    @Published var isRegistered: Bool = false
+    @Published var isRegistered: Bool = true
     
     init() {
         checkRegistrationStatus()
     }
     
     func checkRegistrationStatus() {
-        isRegistered = true
         currentView = isRegistered ? .main : .walkthrough
     }
     

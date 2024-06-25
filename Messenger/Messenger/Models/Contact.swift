@@ -19,6 +19,20 @@ struct Contact: Identifiable, Hashable {
     var avatar: String?
     var hasStories: Bool
     var gradientColors: [Color]
+    var creationDate: String = ""
+    
+    var fullName: String {
+        if let lastName = lastName {
+            return "\(firstName) \(lastName)"
+        }
+        return firstName
+    }
+    
+    var initials: String {
+        let firstInitial = firstName.first.map { String($0) } ?? ""
+        let lastInitial = lastName?.first.map { String($0) } ?? ""
+        return firstInitial + lastInitial
+    }
 }
 
 struct SocialLink: Identifiable, Hashable {

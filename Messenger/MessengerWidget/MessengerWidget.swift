@@ -9,49 +9,54 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+    func placeholder(in context: Context) -> WidgetEntry {
+        WidgetEntry(contactToDisplay: ContactsExample.shared.contacts, selected: ContactsExample.shared.selected)
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WidgetEntry {
+        WidgetEntry(contactToDisplay: ContactsExample.shared.contacts, selected: ContactsExample.shared.selected)
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        return Timeline(entries: entries, policy: .atEnd)
+    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WidgetEntry> {
+        let timeline = Timeline(entries: [WidgetEntry(contactToDisplay: ContactsExample.shared.contacts, selected: ContactsExample.shared.selected)], policy: .atEnd)
+        return timeline
     }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let configuration: ConfigurationAppIntent
+struct WidgetEntry: TimelineEntry {
+    var date: Date = .now
+    var contactToDisplay: [Contact]
+    var selected: Int
 }
 
 struct MessengerWidgetEntryView : View {
+    @Environment(\.widgetFamily) var family
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        switch family {
+        case .systemSmall:
+            MediumWidgetView(entry: entry)
+        case .systemMedium:
+            MediumWidgetView(entry: entry)
+        case .systemLarge:
+            MediumWidgetView(entry: entry)
+        case .systemExtraLarge:
+            MediumWidgetView(entry: entry)
+        case .accessoryCircular:
+            MediumWidgetView(entry: entry)
+        case .accessoryRectangular:
+            MediumWidgetView(entry: entry)
+        case .accessoryInline:
+            MediumWidgetView(entry: entry)
+        @unknown default:
+            MediumWidgetView(entry: entry)
         }
     }
 }
 
 struct MessengerWidget: Widget {
+    @Environment(\.widgetFamily) var family
     let kind: String = "MessengerWidget"
 
     var body: some WidgetConfiguration {
@@ -59,26 +64,86 @@ struct MessengerWidget: Widget {
             MessengerWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .supportedFamilies([.systemMedium])
     }
 }
 
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
+struct MediumWidgetView: View {
+    var entry: Provider.Entry
+
+    var body: some View {
+        GeometryReader { geo in
+            HStack {
+                VStack () {
+                    Text(entry.contactToDisplay[entry.selected].fullName)
+                        .font(.headline)
+                        .foregroundColor(.purple)
+                        .frame(width: 140, height: 20)
+
+                    contactImageView
+                }
+                
+                Spacer().frame(width: 50)
+
+                HStack {
+                    changeContactButton(imageName: "chevron.left",
+                                        intentIndex: (entry.selected - 1 + entry.contactToDisplay.count) % entry.contactToDisplay.count
+                    )
+                    
+                    changeContactButton(imageName: "chevron.right",
+                                        intentIndex: (entry.selected + 1) % entry.contactToDisplay.count
+                    )
+                }
+            }
+            .widgetURL(URL(string: "myapp://contactdetails?initials=\(entry.contactToDisplay[entry.selected].initials)&creationDate=\(entry.contactToDisplay[entry.selected].creationDate)")!)
+        }
     }
+}
+
+
+
+extension MediumWidgetView {
+    @ViewBuilder
+    private var contactImageView: some View {
+        if let imageName = entry.contactToDisplay[entry.selected].avatar {
+            Image(imageName)
+                .resizable()
+                .frame(width: 75, height: 75)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.purple, lineWidth: 2))
+        } else {
+            Circle()
+                .frame(width: 75, height: 75)
+                .foregroundStyle(Color.purple)
+                .overlay(
+                    Text(entry.contactToDisplay[entry.selected].initials)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14, weight: .bold))
+                )
+        }
+    }
+
+
     
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
+    private func changeContactButton(imageName: String, intentIndex: Int) -> some View {
+        Button(intent: ChangeContactIntent(index: (intentIndex))) {
+            Image(systemName: imageName)
+                .foregroundStyle(Color.white)
+        }
+        .frame(width: 40, height: 40)
+        .background(
+            Circle()
+                .foregroundColor(Color.purple)
+        )
+        .buttonStyle(.plain)
     }
+
+
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemExtraLarge) {
     MessengerWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    WidgetEntry(contactToDisplay: Array(ContactsExample.shared.contacts), selected: 0)
+    WidgetEntry(contactToDisplay: Array(ContactsExample.shared.contacts), selected: 0)
 }
